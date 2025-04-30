@@ -1,4 +1,4 @@
-**Praktiskā darba uzdevums: Pilnas kaudzes (Full-Stack) izstrāde ar PostgreSQL, Express.js (Knex) un Next.js**
+**Praktiskā darba uzdevums: Full-Stack izstrāde ar PostgreSQL, Express.js (Knex) un Next.js**
 
 ---
 
