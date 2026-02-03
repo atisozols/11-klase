@@ -8,7 +8,7 @@ SELECT
   Employees.LastName,
   COUNT(Orders.OrderID) AS OrdersCount
 FROM Employees
-LEFT JOIN Orders ON Orders.EmployeeID = Employees.EmployeeID
+INNER JOIN Orders ON Orders.EmployeeID = Employees.EmployeeID
 GROUP BY Employees.EmployeeID, Employees.FirstName, Employees.LastName
 ORDER BY OrdersCount DESC;
 ```
@@ -18,9 +18,9 @@ ORDER BY OrdersCount DESC;
 ```sql
 SELECT
   Suppliers.SupplierName,
-  COUNT(Products.ProductID) AS ProductCount
+  COUNT(*) AS ProductCount
 FROM Suppliers
-LEFT JOIN Products ON Products.SupplierID = Suppliers.SupplierID
+INNER JOIN Products ON Products.SupplierID = Suppliers.SupplierID
 GROUP BY Suppliers.SupplierID, Suppliers.SupplierName
 ORDER BY ProductCount DESC;
 ```
@@ -32,7 +32,7 @@ SELECT
   Categories.CategoryName,
   MIN(Products.Price) AS MinPrice
 FROM Categories
-LEFT JOIN Products ON Products.CategoryID = Categories.CategoryID
+INNER JOIN Products ON Products.CategoryID = Categories.CategoryID
 GROUP BY Categories.CategoryID, Categories.CategoryName
 ORDER BY MinPrice ASC;
 ```
@@ -44,7 +44,7 @@ SELECT
   Products.ProductName,
   AVG(OrderDetails.Quantity) AS AvgQuantity
 FROM Products
-LEFT JOIN OrderDetails ON OrderDetails.ProductID = Products.ProductID
+INNER JOIN OrderDetails ON OrderDetails.ProductID = Products.ProductID
 GROUP BY Products.ProductID, Products.ProductName
 ORDER BY AvgQuantity DESC;
 ```
