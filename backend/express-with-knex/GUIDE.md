@@ -142,6 +142,12 @@ SELECT * FROM borrowings;
 Atver termināli **savā projekta mapē** (`express-with-knex`) un izpildi:
 
 ```bash
+npm i
+```
+
+un tad
+
+```bash
 npm install knex pg
 ```
 
