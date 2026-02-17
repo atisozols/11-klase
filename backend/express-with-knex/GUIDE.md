@@ -266,11 +266,11 @@ Tev vajadzētu saņemt atpakaļ kaut ko līdzīgu:
 ]
 ```
 
-Ja redzat šo – **apsveicam, tavs Express serveris tagad lasa datus no PostgreSQL caur Knex!**
+Ja redzi šo – **tavs Express serveris tagad lasa datus no PostgreSQL caur Knex!**
 
 ---
 
-## 9) Ko tieši Knex izdarīja "aiz kulisēm"?
+## 9) Ko tieši Knex izdarīja?
 
 Kad tu uzrakstīji:
 
