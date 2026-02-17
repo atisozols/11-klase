@@ -101,22 +101,22 @@ CREATE TABLE borrowings (
 INSERT INTO authors (name, country) VALUES
   ('Rainis', 'Latvija'),
   ('Aspazija', 'Latvija'),
-  ('Rūdolfs Blaumanis', 'Latvija'),
-  ('Vilis Lācis', 'Latvija');
+  ('Rudolfs Blaumanis', 'Latvija'),
+  ('Vilis Lacis', 'Latvija');
 
 INSERT INTO books (title, author_id, published_year) VALUES
   ('Uguns un nakts', 1, 1905),
   ('Zelta zirgs', 1, 1909),
   ('Aspazijas dzejoļi', 2, 1894),
-  ('Nāves ēnā', 3, 1899),
-  ('Zvejnieka dēls', 4, 1933),
-  ('Pazudušais dēls', 3, 1893);
+  ('Naves ena', 3, 1899),
+  ('Zvejnieka dels', 4, 1933),
+  ('Pazudusais dels', 3, 1893);
 
 INSERT INTO students (name, email, grade) VALUES
-  ('Anna Bērziņa', 'anna@skola.lv', 11),
-  ('Kārlis Ozols', 'karlis@skola.lv', 11),
-  ('Elīna Kalniņa', 'elina@skola.lv', 10),
-  ('Mārtiņš Liepa', 'martins@skola.lv', 12);
+  ('Anna Berzina', 'anna@skola.lv', 11),
+  ('Karlis Ozols', 'karlis@skola.lv', 11),
+  ('Elina Kalnina', 'elina@skola.lv', 10),
+  ('Martins Liepa', 'martins@skola.lv', 12);
 
 INSERT INTO borrowings (student_id, book_id, borrowed_at, returned_at) VALUES
   (1, 1, '2025-09-01', '2025-09-15'),
