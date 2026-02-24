@@ -61,13 +61,19 @@ app.get("/students/:id", async (req, res) => {
 
 app.get("/borrowings/:studentId", async (req, res) => {
   try {
+    const active = req.query.active === "true"; // ..../borrowings/1?active=true
+
     const studentId = req.params.studentId;
 
-    const studentBorrowings = await knex("borrowings")
+    const query = knex("borrowings")
       .select("books.title", "authors.name as author")
       .innerJoin("books", "borrowings.book_id", "books.id")
       .innerJoin("authors", "books.author_id", "authors.id")
       .where("borrowings.student_id", studentId);
+
+    if (active) query.where({ "borrowings.returned_at": null });
+
+    const studentBorrowings = await query;
 
     res.json(studentBorrowings);
   } catch (err) {
@@ -81,15 +87,11 @@ app.get("/borrowings/:studentId/active", async (req, res) => {
     const studentId = req.params.studentId;
 
     const activeBorrowings = await knex("borrowings")
-      .select(
-        "books.title",
-        "authors.name as author",
-        "borrowings.borrowed_date",
-      )
+      .select("books.title", "authors.name as author", "borrowings.borrowed_at")
       .innerJoin("books", "borrowings.book_id", "books.id")
       .innerJoin("authors", "books.author_id", "authors.id")
       .where("borrowings.student_id", studentId)
-      .whereNull("borrowings.returned_date");
+      .where({ "borrowings.returned_at": null });
 
     res.json(activeBorrowings);
   } catch (err) {
