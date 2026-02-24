@@ -43,24 +43,31 @@ app.get("/students", async (req, res) => {
 app.get("/students/:id", async (req, res) => {
   try {
     const id = req.params.id;
-    const students = await knex("students")
+    const student = await knex("students")
       .select("name", "email")
-      .where({ id: id });
-    res.json(students);
+      .where({ id: id })
+      .first();
+
+    if (!student) {
+      return res.status(404).json({ error: "Skolēns nav atrasts" });
+    }
+
+    res.json(student);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: "Neizdevās iegūt skolēnus" });
+    res.status(500).json({ error: "Neizdevās iegūt skolēnu" });
   }
 });
 
-// izveidot GET /borrowings/:studentId
 app.get("/borrowings/:studentId", async (req, res) => {
   try {
     const studentId = req.params.studentId;
 
     const studentBorrowings = await knex("borrowings")
-      .select("*")
-      .innerJoin("books", "borrowings.book_id", "books.id"); // INNER JOIN books ON borrowings.book_id = books.id
+      .select("books.title", "authors.name as author")
+      .innerJoin("books", "borrowings.book_id", "books.id")
+      .innerJoin("authors", "books.author_id", "authors.id")
+      .where("borrowings.student_id", studentId);
 
     res.json(studentBorrowings);
   } catch (err) {
@@ -68,6 +75,37 @@ app.get("/borrowings/:studentId", async (req, res) => {
     res.status(500).json({ error: "Neizdevās iegūt izsniegtās grāmatas" });
   }
 });
+
+app.get("/borrowings/:studentId/active", async (req, res) => {
+  try {
+    const studentId = req.params.studentId;
+
+    const activeBorrowings = await knex("borrowings")
+      .select(
+        "books.title",
+        "authors.name as author",
+        "borrowings.borrowed_date",
+      )
+      .innerJoin("books", "borrowings.book_id", "books.id")
+      .innerJoin("authors", "books.author_id", "authors.id")
+      .where("borrowings.student_id", studentId)
+      .whereNull("borrowings.returned_date");
+
+    res.json(activeBorrowings);
+  } catch (err) {
+    console.error(err);
+    res
+      .status(500)
+      .json({ error: "Neizdevās iegūt aktīvās aizņemtās grāmatas" });
+  }
+});
+
+// TODO: Uzdevumi turpmākai izstrādei:
+// 1. Izveidot POST /borrowings endpoint, kas ļauj izsniegt grāmatu skolēnam (pievieno jaunu ierakstu borrowings tabulā)
+// 2. Izveidot PUT /borrowings/:id/return endpoint, kas atzīmē grāmatu kā atgrieztu (atjaunina returned_date lauku)
+// 3. Pievienot validāciju - pārbaudīt vai grāmata jau ir izsniegta pirms jaunas izsniegšanas
+// 4. Izveidot GET /books/:id/availability endpoint, kas parāda vai grāmata ir pieejama aizņemšanai
+// 5. Pievienot pagināciju GET /students un GET /books endpoint'iem (limit un offset parametri)
 
 const server = app.listen(PORT, () => {
   console.log(`Serveris darbojas adresē http://localhost:${PORT}`);
