@@ -107,7 +107,7 @@ app.get("/borrowings/:studentId/active", async (req, res) => {
 // 2. Izveidot PUT /borrowings/:id/return endpoint, kas atzīmē grāmatu kā atgrieztu (atjaunina returned_date lauku)
 // 3. Pievienot validāciju - pārbaudīt vai grāmata jau ir izsniegta pirms jaunas izsniegšanas
 // 4. Izveidot GET /books/:id/availability endpoint, kas parāda vai grāmata ir pieejama aizņemšanai
-// 5. Pievienot pagināciju GET /students un GET /books endpoint'iem (limit un offset parametri)
+// 5. Izveidot GET /books/:id/history, kas parāda grāmatas izsniegšanas vēsturi hronoloģiskā secībā, iekļaujot arī izsniegšanu, kas vēl nav atgriezta
 
 const server = app.listen(PORT, () => {
   console.log(`Serveris darbojas adresē http://localhost:${PORT}`);
