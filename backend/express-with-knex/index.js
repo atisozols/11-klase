@@ -269,6 +269,28 @@ app.get("/books/:id/history", async (req, res) => {
 });
 
 // TODO: Pievienot `POST /authors`, lai varētu izveidot jaunu autoru (name, country).
+app.post("/authors", async (req, res) => {
+  try {
+    const { name, country = null } = req.body;
+
+    if (!name) {
+      return res.status(400).json({ error: "Trūkst autora vārds" });
+    }
+
+    const [createdAuthor] = await knex("authors")
+      .insert({
+        name: name,
+        country: country,
+      })
+      .returning(["id", "name", "country"]);
+
+    res.status(201).json(createdAuthor);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Neizdevās izveidot autoru" });
+  }
+});
+
 // TODO: Pievienot `POST /books`, lai varētu pievienot jaunu grāmatu ar pārbaudi, ka `author_id` eksistē.
 // TODO: Pievienot `POST /students`, lai varētu pievienot jaunu skolēnu (name, email, grade).
 // TODO: Pievienot `PUT /students/:id`, lai varētu atjaunināt skolēna datus.
