@@ -252,6 +252,12 @@ app.get("/books/:id/history", async (req, res) => {
   }
 });
 
+// TODO: Pievienot `POST /authors`, lai varētu izveidot jaunu autoru (name, country).
+// TODO: Pievienot `POST /books`, lai varētu pievienot jaunu grāmatu ar pārbaudi, ka `author_id` eksistē.
+// TODO: Pievienot `POST /students`, lai varētu pievienot jaunu skolēnu (name, email, grade).
+// TODO: Pievienot `PUT /students/:id`, lai varētu atjaunināt skolēna datus.
+// TODO: Pievienot `DELETE /students/:id`, atļaujot dzēšanu tikai tad, ja nav aktīvu aizņēmumu.
+
 const server = app.listen(PORT, () => {
   console.log(`Serveris darbojas adresē http://localhost:${PORT}`);
 });
