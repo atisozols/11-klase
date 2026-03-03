@@ -6,10 +6,12 @@ const PORT = 5001;
 
 app.use(express.json());
 
+// Veselības pārbaudes endpoints: ātri pārbauda, ka serveris strādā.
 app.get("/", (req, res) => {
   res.json({ message: "ok" });
 });
 
+// Atgriež visu autoru sarakstu no datubāzes.
 app.get("/authors", async (req, res) => {
   try {
     const authors = await knex("authors").select("*");
@@ -20,6 +22,7 @@ app.get("/authors", async (req, res) => {
   }
 });
 
+// Atgriež visu grāmatu sarakstu.
 app.get("/books", async (req, res) => {
   try {
     const books = await knex("books").select("*");
@@ -30,6 +33,7 @@ app.get("/books", async (req, res) => {
   }
 });
 
+// Atgriež skolēnu sarakstu (vārds un e-pasts).
 app.get("/students", async (req, res) => {
   try {
     const students = await knex("students").select("name", "email");
@@ -40,6 +44,7 @@ app.get("/students", async (req, res) => {
   }
 });
 
+// Atgriež vienu skolēnu pēc ID.
 app.get("/students/:id", async (req, res) => {
   try {
     const id = req.params.id;
@@ -59,6 +64,7 @@ app.get("/students/:id", async (req, res) => {
   }
 });
 
+// Atgriež skolēna aizņēmumus; ar `?active=true` tikai aktīvos.
 app.get("/borrowings/:studentId", async (req, res) => {
   try {
     const studentId = Number(req.params.studentId);
@@ -93,17 +99,22 @@ app.get("/borrowings/:studentId", async (req, res) => {
   }
 });
 
+// Izveido jaunu aizņēmumu, ja skolēns un grāmata eksistē un grāmata nav izsniegta.
 app.post("/borrowings", async (req, res) => {
   try {
     const studentId = Number(req.body.student_id);
     const bookId = Number(req.body.book_id);
 
     if (!Number.isInteger(studentId) || studentId <= 0) {
-      return res.status(400).json({ error: "student_id jābūt pozitīvam skaitlim" });
+      return res
+        .status(400)
+        .json({ error: "student_id jābūt pozitīvam skaitlim" });
     }
 
     if (!Number.isInteger(bookId) || bookId <= 0) {
-      return res.status(400).json({ error: "book_id jābūt pozitīvam skaitlim" });
+      return res
+        .status(400)
+        .json({ error: "book_id jābūt pozitīvam skaitlim" });
     }
 
     const student = await knex("students")
@@ -145,6 +156,7 @@ app.post("/borrowings", async (req, res) => {
   }
 });
 
+// Atzīmē aizņēmumu kā atgrieztu, uzstādot `returned_at` laiku.
 app.put("/borrowings/:id/return", async (req, res) => {
   try {
     const borrowingId = Number(req.params.id);
@@ -153,13 +165,15 @@ app.put("/borrowings/:id/return", async (req, res) => {
       return res.status(400).json({ error: "Nekorekts borrowing id" });
     }
 
-    const borrowing = await knex("borrowings")
+    const borrowing = await knex("borrowings") // SELECT id, returned_at FROM borrowings WHERE id=borrowingId LIMIT 1;
       .select("id", "returned_at")
       .where({ id: borrowingId })
       .first();
 
     if (!borrowing) {
-      return res.status(404).json({ error: "Aizņemšanās ieraksts nav atrasts" });
+      return res
+        .status(404)
+        .json({ error: "Aizņemšanās ieraksts nav atrasts" });
     }
 
     if (borrowing.returned_at) {
@@ -178,6 +192,7 @@ app.put("/borrowings/:id/return", async (req, res) => {
   }
 });
 
+// Parāda, vai konkrētā grāmata šobrīd ir pieejama aizņemšanai.
 app.get("/books/:id/availability", async (req, res) => {
   try {
     const bookId = Number(req.params.id);
@@ -212,6 +227,7 @@ app.get("/books/:id/availability", async (req, res) => {
   }
 });
 
+// Atgriež konkrētās grāmatas aizņemšanās vēsturi ar skolēnu datiem.
 app.get("/books/:id/history", async (req, res) => {
   try {
     const bookId = Number(req.params.id);
