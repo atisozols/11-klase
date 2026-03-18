@@ -11,27 +11,9 @@ app.get("/", (req, res) => {
   res.json({ message: "ok" });
 });
 
-// Atgriež visu autoru sarakstu no datubāzes.
-app.get("/authors", async (req, res) => {
-  try {
-    const authors = await knex("authors").select("*");
-    res.json(authors);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Neizdevās iegūt autorus" });
-  }
-});
+app.use("/authors", require("./routes/authors"));
 
-// Atgriež visu grāmatu sarakstu.
-app.get("/books", async (req, res) => {
-  try {
-    const books = await knex("books").select("*");
-    res.json(books);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Neizdevās iegūt grāmatas" });
-  }
-});
+app.use("/books", require("./routes/books"));
 
 // Atgriež skolēnu sarakstu (vārds un e-pasts).
 app.get("/students", async (req, res) => {
@@ -189,105 +171,6 @@ app.put("/borrowings/:id/return", async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Neizdevās atzīmēt grāmatu kā atgrieztu" });
-  }
-});
-
-// Parāda, vai konkrētā grāmata šobrīd ir pieejama aizņemšanai.
-app.get("/books/:id/availability", async (req, res) => {
-  try {
-    const bookId = Number(req.params.id);
-
-    if (!Number.isInteger(bookId) || bookId <= 0) {
-      return res.status(400).json({ error: "Nekorekts book id" });
-    }
-
-    const book = await knex("books")
-      .select("id", "title", "author_id", "published_year")
-      .where({ id: bookId })
-      .first();
-
-    if (!book) {
-      return res.status(404).json({ error: "Grāmata nav atrasta" });
-    }
-
-    const activeBorrowing = await knex("borrowings")
-      .select("id", "student_id", "borrowed_at")
-      .where({ book_id: bookId })
-      .whereNull("returned_at")
-      .first();
-
-    res.json({
-      book,
-      is_available: !activeBorrowing,
-      active_borrowing: activeBorrowing ?? null,
-    });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Neizdevās iegūt pieejamības informāciju" });
-  }
-});
-
-// Atgriež konkrētās grāmatas aizņemšanās vēsturi ar skolēnu datiem.
-app.get("/books/:id/history", async (req, res) => {
-  try {
-    const bookId = Number(req.params.id);
-
-    if (!Number.isInteger(bookId) || bookId <= 0) {
-      return res.status(400).json({ error: "Nekorekts book id" });
-    }
-
-    const book = await knex("books")
-      .select("id", "title", "author_id", "published_year")
-      .where({ id: bookId })
-      .first();
-
-    if (!book) {
-      return res.status(404).json({ error: "Grāmata nav atrasta" });
-    }
-
-    const history = await knex("borrowings")
-      .select(
-        "borrowings.id",
-        "borrowings.student_id",
-        "students.name as student_name",
-        "students.email as student_email",
-        "borrowings.borrowed_at",
-        "borrowings.returned_at",
-      )
-      .innerJoin("students", "borrowings.student_id", "students.id")
-      .where("borrowings.book_id", bookId)
-      .orderBy("borrowings.borrowed_at", "asc");
-
-    res.json({
-      book,
-      history,
-    });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Neizdevās iegūt grāmatas vēsturi" });
-  }
-});
-
-// TODO: Pievienot `POST /authors`, lai varētu izveidot jaunu autoru (name, country).
-app.post("/authors", async (req, res) => {
-  try {
-    const { name, country = null } = req.body;
-
-    if (!name) {
-      return res.status(400).json({ error: "Trūkst autora vārds" });
-    }
-
-    const [createdAuthor] = await knex("authors")
-      .insert({
-        name: name,
-        country: country,
-      })
-      .returning(["id", "name", "country"]);
-
-    res.status(201).json(createdAuthor);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Neizdevās izveidot autoru" });
   }
 });
 
