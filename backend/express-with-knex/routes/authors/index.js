@@ -5,6 +5,7 @@ const router = express.Router();
 // app.get("/authors", ) -> router.route("/").get()
 router.route("/").get(async (req, res) => {
   try {
+    // SELECT * FROM Authors;
     const authors = await knex("authors").select("*");
     res.json(authors);
   } catch (err) {

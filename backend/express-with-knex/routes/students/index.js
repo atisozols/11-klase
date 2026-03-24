@@ -58,7 +58,6 @@ router.route("/:id").get(async (req, res) => {
   }
 });
 
-// TODO: Pievienot `PUT /students/:id`, lai varētu atjaunināt skolēna datus.
 router.route("/:id").put(async (req, res) => {
   try {
     const { name, email, grade } = req.body;
