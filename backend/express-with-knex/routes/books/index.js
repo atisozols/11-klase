@@ -12,6 +12,38 @@ router.route("/").get(async (req, res) => {
   }
 });
 
+router.route("/").post(async (req, res) => {
+  try {
+    const { title, authorId, publishedYear } = req.body;
+
+    if (!title || !authorId || !publishedYear) {
+      return res.status(400).json({ error: "Trūkst grāmatas dati" });
+    }
+
+    const author = await knex("authors")
+      .select("id")
+      .where({ id: authorId })
+      .first();
+
+    if (!author) {
+      return res.status(404).json({ error: "Autors nav atrasts" });
+    }
+
+    const [createdBook] = await knex("books")
+      .insert({
+        title: title,
+        author_id: authorId,
+        published_year: publishedYear,
+      })
+      .returning(["title", "author_id", "published_year"]);
+
+    res.status(201).json(createdBook);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Neizdevās izveidot autoru" });
+  }
+});
+
 router.route("/:id/availability").get(async (req, res) => {
   try {
     const bookId = Number(req.params.id);
@@ -85,5 +117,7 @@ router.route("/:id/history").get(async (req, res) => {
     res.status(500).json({ error: "Neizdevās iegūt grāmatas vēsturi" });
   }
 });
+
+// TODO: Pievienot `POST /books`, lai varētu pievienot jaunu grāmatu ar pārbaudi, ka `author_id` eksistē.
 
 module.exports = router;
