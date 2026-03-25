@@ -17,6 +17,8 @@ app.use("/books", require("./routes/books"));
 
 app.use("/students", require("./routes/students"));
 
+app.use("/borrowings", require("./routes/borrowings"));
+
 // TODO: Pievienot `DELETE /students/:id`, atļaujot dzēšanu tikai tad, ja nav aktīvu aizņēmumu.
 // TODO: Funkcija, kas atgriež visas autora grāmatas
 

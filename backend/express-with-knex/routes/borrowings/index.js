@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 // Atgriež skolēna aizņēmumus; ar `?active=true` tikai aktīvos.
-router.route("/borrowings/:studentId").get(async (req, res) => {
+router.route("/:studentId").get(async (req, res) => {
   try {
     const studentId = Number(req.params.studentId);
     const active = req.query.active === "true"; // /borrowings/1?active=true
@@ -38,7 +38,7 @@ router.route("/borrowings/:studentId").get(async (req, res) => {
 });
 
 // Izveido jaunu aizņēmumu, ja skolēns un grāmata eksistē un grāmata nav izsniegta.
-router.route("/borrowings").post(async (req, res) => {
+router.route("/").post(async (req, res) => {
   try {
     const studentId = Number(req.body.student_id);
     const bookId = Number(req.body.book_id);
@@ -95,7 +95,7 @@ router.route("/borrowings").post(async (req, res) => {
 });
 
 // Atzīmē aizņēmumu kā atgrieztu, uzstādot `returned_at` laiku.
-router.route("/borrowings/:id/return").put(async (req, res) => {
+router.route("/:id/return").put(async (req, res) => {
   try {
     const borrowingId = Number(req.params.id);
 
