@@ -315,3 +315,387 @@ express-with-knex/
 - **`knexfile.js`** – "kur ir mana datubāze un kā tai pieslēgties"
 - **`db.js`** – "izveido savienojumu un eksportē to"
 - **`index.js`** – "Express serveris, kas lieto DB savienojumu, lai apstrādātu pieprasījumus"
+
+---
+
+## 11) Migrations un seeds - migrācijas un datu ielāde
+
+Līdz šim mēs tabulas un testa datus veidojām **manuāli ar SQL** (`CREATE TABLE`, `INSERT INTO`).
+
+Tas ir labs sākums, lai saprastu datubāzi. Taču reālos projektos ļoti bieži izmanto:
+
+- **migrations** – failus, kas apraksta datubāzes struktūru
+- **seeds** – failus, kas ieliek sākuma vai testa datus
+
+Kāpēc tas ir ērti:
+
+1. Visa datubāzes struktūra glabājas projekta failos.
+2. Cits cilvēks komandā var palaist tās pašas komandas un iegūt to pašu rezultātu.
+3. Izmaiņas var atcelt ar `rollback`.
+4. Testa datus var atjaunot ar vienu komandu.
+
+> **Svarīgi:** migrations un seeds parasti ir **alternatīva** 2. un 3. solim, nevis papildinājums tiem.
+>
+> Ja tu jau izveidoji tabulas ar `CREATE TABLE`, tad `migrate:latest` mēģinās tās izveidot vēlreiz un radīs kļūdu. Šai daļai izmanto:
+>
+> - vai nu **jaunu tukšu datubāzi**
+> - vai arī izdzēs esošās tabulas un sāc no jauna
+
+---
+
+## 12) Papildini `knexfile.js`, lai Knex zina par `migrations` un `seeds`
+
+Knex pēc noklusējuma pats meklē mapes `migrations/` un `seeds/`, bet mācību nolūkos ir labi tās norādīt skaidri.
+
+`knexfile.js` var izskatīties šādi:
+
+```js
+module.exports = {
+  client: "pg",
+  connection: {
+    host: "localhost",
+    port: 5432,
+    user: "postgres",
+    password: "admin", // <-- nomaini uz savu PostgreSQL paroli
+    database: "school_library",
+  },
+  migrations: {
+    directory: "./migrations",
+  },
+  seeds: {
+    directory: "./seeds",
+  },
+};
+```
+
+Tagad Knex zinās:
+
+- kur glabāt tabulu struktūras failus
+- kur glabāt sākuma datu failus
+
+---
+
+## 13) Izveido pirmo migration failu
+
+Terminālī projekta mapē izpildi:
+
+```bash
+npx knex migrate:make create_library_tables
+```
+
+Knex izveidos failu mapē `migrations/` ar nosaukumu apmēram šādā stilā:
+
+```text
+migrations/20260331120000_create_library_tables.js
+```
+
+Atver šo failu un ieliec šādu saturu:
+
+```js
+exports.up = async function (knex) {
+  await knex.schema.createTable("authors", (table) => {
+    table.increments("id").primary();
+    table.text("name").notNullable();
+    table.text("country");
+  });
+
+  await knex.schema.createTable("books", (table) => {
+    table.increments("id").primary();
+    table.text("title").notNullable();
+    table.integer("author_id").references("id").inTable("authors");
+    table.integer("published_year");
+  });
+
+  await knex.schema.createTable("students", (table) => {
+    table.increments("id").primary();
+    table.text("name").notNullable();
+    table.text("email").notNullable().unique();
+    table.integer("grade");
+  });
+
+  await knex.schema.createTable("borrowings", (table) => {
+    table.increments("id").primary();
+    table.integer("student_id").references("id").inTable("students");
+    table.integer("book_id").references("id").inTable("books");
+    table.timestamp("borrowed_at").defaultTo(knex.fn.now());
+    table.timestamp("returned_at").nullable();
+  });
+};
+
+exports.down = async function (knex) {
+  await knex.schema.dropTableIfExists("borrowings");
+  await knex.schema.dropTableIfExists("students");
+  await knex.schema.dropTableIfExists("books");
+  await knex.schema.dropTableIfExists("authors");
+};
+```
+
+### Ko nozīmē `up` un `down`?
+
+- **`exports.up`** – ko darīt, kad migration tiek palaists uz priekšu
+- **`exports.down`** – ko darīt, kad gribam šīs izmaiņas atcelt
+
+Tātad:
+
+- `up` sadaļā mēs **izveidojam tabulas**
+- `down` sadaļā mēs **tās dzēšam apgrieztā secībā**
+
+> `borrowings` jādzēš vispirms, jo tā izmanto ārējās atslēgas uz `students` un `books`.
+
+---
+
+## 14) Palaiž migrations
+
+Kad migration fails ir gatavs, izpildi:
+
+```bash
+npx knex migrate:latest
+```
+
+Kas notiks:
+
+1. Knex izveidos tabulas pēc `exports.up`.
+2. Datubāzē automātiski parādīsies arī palīgtabulas:
+   - `knex_migrations`
+   - `knex_migrations_lock`
+3. Knex atzīmēs, ka šī migration jau ir izpildīta.
+
+Ja gribi atcelt pēdējo migration:
+
+```bash
+npx knex migrate:rollback
+```
+
+Ja pēc tam gribi to palaist vēlreiz:
+
+```bash
+npx knex migrate:latest
+```
+
+Tā ir liela migrations priekšrocība: tu vari ne tikai izveidot struktūru, bet arī droši pārbaudīt izmaiņas un vajadzības gadījumā tās atcelt.
+
+---
+
+## 15) Izveido otru migration, kas maina jau esošu tabulu
+
+Līdz šim mēs izmantojām migration, lai **izveidotu tabulas no nulles**.
+
+Taču reālos projektos migrations ļoti bieži izmanto arī tam, lai **mainītu jau esošu datubāzes struktūru**. Piemēram:
+
+- pievienot jaunu kolonnu
+- izdzēst vecu kolonnu
+- pievienot `UNIQUE`
+- nomainīt datu tipu
+
+Pieņemsim, ka vēlāk mēs izdomājam glabāt arī skolēna telefona numuru.
+
+Terminālī izpildi:
+
+```bash
+npx knex migrate:make add_phone_to_students
+```
+
+Knex izveidos vēl vienu failu mapē `migrations/`, piemēram:
+
+```text
+migrations/20260331121000_add_phone_to_students.js
+```
+
+Atver šo failu un ieliec šādu saturu:
+
+```js
+exports.up = async function (knex) {
+  await knex.schema.alterTable("students", (table) => {
+    table.text("phone");
+  });
+};
+
+exports.down = async function (knex) {
+  await knex.schema.alterTable("students", (table) => {
+    table.dropColumn("phone");
+  });
+};
+```
+
+### Kāpēc šeit ir `alterTable(...)`, nevis `createTable(...)`?
+
+- **`createTable(...)`** lieto tad, kad tabula vēl neeksistē.
+- **`alterTable(...)`** lieto tad, kad tabula jau eksistē un tu gribi to izmainīt.
+
+Šajā piemērā:
+
+- pirmais migration fails izveido `students` tabulu
+- otrais migration fails tai pievieno jaunu kolonnu `phone`
+
+Kolonna `phone` ir **neobligāta**, jo mēs nelietojam `.notNullable()`.
+
+Tas ir ērti mācību piemēram, jo:
+
+1. nav jāmaina esošie seed dati
+2. nav jāievada telefona numurs katram skolēnam
+3. var skaidri redzēt, kā migrations palīdz attīstīt shēmu pa soļiem
+
+Kad fails ir gatavs, palaid vēlreiz:
+
+```bash
+npx knex migrate:latest
+```
+
+Šoreiz Knex:
+
+1. nepalaidīs pirmo migration vēlreiz
+2. atradīs tikai jauno, vēl neizpildīto migration failu
+3. pievienos `phone` kolonnu tabulai `students`
+
+Tieši tā migrations strādā reālos projektos:
+
+- sākumā viens fails izveido sākotnējo struktūru
+- vēlāk citi faili pakāpeniski maina esošo struktūru
+- `migrate:latest` izpilda tikai to, kas vēl nav izpildīts
+
+Ja gribi šo izmaiņu atcelt, vari lietot:
+
+```bash
+npx knex migrate:rollback
+```
+
+Tad tiks atcelts **pēdējais** migration, tas ir, `phone` kolonna tiks noņemta.
+
+---
+
+## 16) Izveido seed failu testa datiem
+
+Tagad izveidosim failu, kas ieliek datubāzē mūsu bibliotēkas sākuma datus.
+
+Terminālī izpildi:
+
+```bash
+npx knex seed:make library_data
+```
+
+Tas izveidos failu mapē `seeds/`, piemēram:
+
+```text
+seeds/library_data.js
+```
+
+Atver šo failu un ieliec šādu saturu:
+
+```js
+exports.seed = async function (knex) {
+  await knex.raw(
+    "TRUNCATE TABLE borrowings, books, students, authors RESTART IDENTITY CASCADE",
+  );
+
+  await knex("authors").insert([
+    { name: "Rainis", country: "Latvija" },
+    { name: "Aspazija", country: "Latvija" },
+    { name: "Rudolfs Blaumanis", country: "Latvija" },
+    { name: "Vilis Lacis", country: "Latvija" },
+  ]);
+
+  await knex("books").insert([
+    { title: "Uguns un nakts", author_id: 1, published_year: 1905 },
+    { title: "Zelta zirgs", author_id: 1, published_year: 1909 },
+    { title: "Aspazijas dzejoli", author_id: 2, published_year: 1894 },
+    { title: "Naves ena", author_id: 3, published_year: 1899 },
+    { title: "Zvejnieka dels", author_id: 4, published_year: 1933 },
+    { title: "Pazudusais dels", author_id: 3, published_year: 1893 },
+  ]);
+
+  await knex("students").insert([
+    { name: "Anna Berzina", email: "anna@skola.lv", grade: 11 },
+    { name: "Karlis Ozols", email: "karlis@skola.lv", grade: 11 },
+    { name: "Elina Kalnina", email: "elina@skola.lv", grade: 10 },
+    { name: "Martins Liepa", email: "martins@skola.lv", grade: 12 },
+  ]);
+
+  await knex("borrowings").insert([
+    {
+      student_id: 1,
+      book_id: 1,
+      borrowed_at: "2025-09-01",
+      returned_at: "2025-09-15",
+    },
+    { student_id: 1, book_id: 4, borrowed_at: "2025-10-01", returned_at: null },
+    { student_id: 2, book_id: 2, borrowed_at: "2025-10-05", returned_at: null },
+    {
+      student_id: 3,
+      book_id: 5,
+      borrowed_at: "2025-09-20",
+      returned_at: "2025-10-01",
+    },
+    { student_id: 4, book_id: 3, borrowed_at: "2025-11-01", returned_at: null },
+  ]);
+};
+```
+
+### Kāpēc te ir `TRUNCATE ... RESTART IDENTITY CASCADE`?
+
+Šī rinda:
+
+1. iztīra visas četras tabulas
+2. atiestata `id` skaitītājus atpakaļ uz 1
+3. ļauj seed failu palaist atkārtoti bez konflikta ar vecajiem datiem
+
+Tas ir īpaši noderīgi mācību projektā, kur mēs gribam vienmēr atgriezties pie viena un tā paša sākuma stāvokļa.
+
+---
+
+## 17) Palaiž seeds
+
+Kad tabulas jau ir izveidotas ar migration, ieliec datus ar komandu:
+
+```bash
+npx knex seed:run
+```
+
+Pēc tam vari pārbaudīt rezultātu:
+
+```bash
+curl http://localhost:5000/authors
+```
+
+vai arī PostgreSQL konsolē:
+
+```sql
+SELECT * FROM authors;
+SELECT * FROM books;
+SELECT * FROM students;
+SELECT * FROM borrowings;
+```
+
+Ja gribi pilnu darba plūsmu no tukšas datubāzes līdz gataviem testa datiem, tad bieži pietiek ar šīm divām komandām:
+
+```bash
+npx knex migrate:latest
+npx knex seed:run
+```
+
+---
+
+## 18) Kopsavilkums: kad lietot ko?
+
+- Ja tu mācies SQL pamatus, ir labi sākumā rakstīt `CREATE TABLE` un `INSERT INTO` ar roku.
+- Ja tu būvē īstu projektu ar Node.js un Knex, ērtāk ir lietot **migrations** un **seeds**.
+- **Migrations** atbild par tabulu struktūru un tās izmaiņām laika gaitā.
+- **Seeds** atbild par sākuma vai testa datiem.
+- Ar migrations tu vari ne tikai izveidot tabulas, bet arī vēlāk pievienot jaunas kolonnas vai citādi mainīt esošās tabulas.
+
+Pēc migrations un seeds pievienošanas projekta struktūra var izskatīties šādi:
+
+```text
+express-with-knex/
+├── index.js
+├── db.js
+├── knexfile.js
+├── migrations/
+│   ├── 20260331120000_create_library_tables.js
+│   └── 20260331121000_add_phone_to_students.js
+├── seeds/
+│   └── library_data.js
+├── package.json
+└── node_modules/
+```
+
+Ja tu šo daļu saproti, tad nākamais solis jau ir ļoti praktisks: veidot jaunus API maršrutus (`GET`, `POST`, `PUT`, `DELETE`) un ar Knex palīdzību lasīt un mainīt datus datubāzē.
