@@ -118,6 +118,4 @@ router.route("/:id/history").get(async (req, res) => {
   }
 });
 
-// TODO: Pievienot `POST /books`, lai varētu pievienot jaunu grāmatu ar pārbaudi, ka `author_id` eksistē.
-
 module.exports = router;

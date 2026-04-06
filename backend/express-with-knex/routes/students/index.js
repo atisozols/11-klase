@@ -93,4 +93,36 @@ router.route("/:id").put(async (req, res) => {
   }
 });
 
+router.route("/:id").delete(async (req, res) => {
+  try {
+    const id = Number(req.params.id);
+
+    if (!Number.isInteger(id) || id <= 0) {
+      return res.status(400).json({ error: "ID jābūt pozitīvam skaitlim" });
+    }
+
+    const student = await knex("students").where({ id }).first();
+    if (!student) {
+      return res.status(404).json({ error: "Skolēns nav atrasts" });
+    }
+
+    const activeBorrowing = await knex("borrowings")
+      .where({ student_id: id })
+      .whereNull("returned_at")
+      .first();
+
+    if (activeBorrowing) {
+      return res
+        .status(409)
+        .json({ error: "Nevar dzēst skolēnu ar aktīviem aizņēmumiem" });
+    }
+
+    await knex("students").where({ id }).delete();
+    res.json({ message: "Skolēns veiksmīgi dzēsts" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Neizdevās dzēst skolēnu" });
+  }
+});
+
 module.exports = router;

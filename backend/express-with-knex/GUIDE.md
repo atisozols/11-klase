@@ -176,6 +176,8 @@ module.exports = {
 
 ---
 
+---
+
 ## 6) Izveido Knex instanci
 
 Izveido jaunu failu `db.js` – šis būs vienīgais fails, kas izveido savienojumu ar datubāzi:

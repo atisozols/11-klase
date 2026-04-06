@@ -36,4 +36,28 @@ router.route("/").post(async (req, res) => {
   }
 });
 
+router.route("/:id/books").get(async (req, res) => {
+  try {
+    const id = Number(req.params.id);
+
+    if (!Number.isInteger(id) || id <= 0) {
+      return res.status(400).json({ error: "ID jābūt pozitīvam skaitlim" });
+    }
+
+    const author = await knex("authors").where({ id }).first();
+    if (!author) {
+      return res.status(404).json({ error: "Autors nav atrasts" });
+    }
+
+    const books = await knex("books")
+      .select("id", "title", "published_year")
+      .where({ author_id: id });
+
+    res.json({ author: author.name, books });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Neizdevās iegūt autora grāmatas" });
+  }
+});
+
 module.exports = router;
