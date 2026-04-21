@@ -1,3 +1,9 @@
+import TennisHeader from "@/components/tennis/TennisHeader";
+
 export default function TennisPage() {
-  return <div></div>;
+  return (
+    <div>
+      <TennisHeader />
+    </div>
+  );
 }
