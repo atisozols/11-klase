@@ -1,14 +1,23 @@
 import Image from "next/image";
 
-export default function PlayerCard() {
+export default function PlayerCard({ name, bio, image, imageDesc }) {
   return (
-    <div className="p-5 flex justify-around">
-      <div className="w-1/4 rounded-tl-3xl overflow-hidden">
-        <Image src="/nadal.png" alt="Rafael Nadal" width={2116} height={1858} />
-        <p>This is a placeholder description that will get replaced</p>
+    <div className="p-5 m-5 flex gap-5 justify-around border border-amber-400 rounded-3xl">
+      <div className="rounded-tl-3xl overflow-hidden">
+        <Image
+          src={image}
+          alt={name}
+          width={2116}
+          height={1858}
+          className="w-[450px]"
+        />
+        <p>{imageDesc}</p>
       </div>
       <div>
-        This is another placeholder description that will also get replaced
+        <p>
+          <span className="font-bold">{name} </span>
+          {bio}
+        </p>
       </div>
     </div>
   );

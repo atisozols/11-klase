@@ -6,7 +6,7 @@ export default function TennisHeader() {
       </div>
       <nav>
         <ul className="flex justify-around p-2 border-b border-b-blue-300">
-          <li>Home</li>
+          <li className="border">Home</li>
           <li>Career</li>
           <li>Achievments</li>
           <li>Gallery</li>

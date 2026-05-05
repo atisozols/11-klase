@@ -1,4 +1,6 @@
 import BusinessCard from "@/components/BusinessCard";
+import Collapsible from "@/components/Collapsible";
+import PlusMinus from "@/components/PlusMinus";
 
 export default function Home() {
   const businessPeople = [
@@ -11,13 +13,8 @@ export default function Home() {
 
   return (
     <div>
-      {businessPeople.map((businessPerson) => (
-        <BusinessCard
-          key={businessPerson.phone}
-          name={businessPerson.name}
-          phone={businessPerson.phone}
-        />
-      ))}
+      <PlusMinus />
+      <Collapsible />
     </div>
   );
 }
