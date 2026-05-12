@@ -42,6 +42,8 @@ export default async function AuthorPage({ params }) {
   const { id } = await params;
   // šeit fetch un render loģika
 }
+```
+
 - Funkcijai jābūt `async`, jo iekšā tu izsauksi `fetch` uz `http://localhost:5001/authors/<id>/books`. Šis endpoint atgriež objektu ar autora vārdu un viņa grāmatu sarakstu — atver `routes/authors/index.js`, lai redzētu precīzu formātu.
 - Izvadi autora vārdu kā virsrakstu un zem tā ciklu pa grāmatām ar `map()`. Katrai grāmatai parādi nosaukumu un izdošanas gadu.
 
@@ -180,4 +182,3 @@ Tev jāspēj atbildēt uz šādiem jautājumiem:
 | Bonus par 6. uzdevumu                                    | +5%   |
 
 **Veiksmi!**
-```
