@@ -35,7 +35,13 @@ Pievērs uzmanību, ka `app/library/authors/page.js` jau veido saites formā `/l
 **Ko darīt:**
 
 - Mapē `app/library/authors/` izveido jaunu apakšmapi ar nosaukumu `[id]`. Kvadrātiekavas šeit ir nopietni svarīgas — Next.js tās izmanto kā signālu, ka šī ir dinamiska URL daļa.
-- Šajā mapē izveido `page.js`. Komponente saņems argumentu, no kura var izvilkt `id` no URL. Skatīties var kā `params` objektu — uz to atsaucies dokumentācijā mapē `node_modules/next/dist/docs/`, ja neesi drošs par sintaksi.
+- Šajā mapē izveido `page.js` ar šādu struktūru:
+
+```javascript
+export default async function AuthorPage({ params }) {
+  const { id } = await params;
+  // šeit fetch un render loģika
+}
 - Funkcijai jābūt `async`, jo iekšā tu izsauksi `fetch` uz `http://localhost:5001/authors/<id>/books`. Šis endpoint atgriež objektu ar autora vārdu un viņa grāmatu sarakstu — atver `routes/authors/index.js`, lai redzētu precīzu formātu.
 - Izvadi autora vārdu kā virsrakstu un zem tā ciklu pa grāmatām ar `map()`. Katrai grāmatai parādi nosaukumu un izdošanas gadu.
 
@@ -174,3 +180,4 @@ Tev jāspēj atbildēt uz šādiem jautājumiem:
 | Bonus par 6. uzdevumu                                    | +5%   |
 
 **Veiksmi!**
+```
