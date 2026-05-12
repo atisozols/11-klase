@@ -4,7 +4,9 @@ const router = express.Router();
 
 router.route("/").get(async (req, res) => {
   try {
-    const books = await knex("books").select("*");
+    const books = await knex("books")
+      .select("books.id", "books.title", "authors.name")
+      .innerJoin("authors", "books.author_id", "authors.id");
     res.json(books);
   } catch (err) {
     console.error(err);

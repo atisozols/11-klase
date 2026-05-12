@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.route("/").get(async (req, res) => {
   try {
-    const students = await knex("students").select("name", "email");
+    const students = await knex("students").select("id", "name", "email");
     res.json(students);
   } catch (err) {
     console.error(err);

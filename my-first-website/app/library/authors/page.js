@@ -1,4 +1,6 @@
-export default async function LibraryPage() {
+import Link from "next/link";
+
+export default async function AuthorsPage() {
   const res = await fetch("http://localhost:5001/authors");
   const authors = await res.json();
   console.log(authors);
@@ -7,7 +9,7 @@ export default async function LibraryPage() {
     <div>
       {authors.map((author) => (
         <div key={author.id}>
-          <p>{author.name}</p>
+          <Link href={`/library/authors/${author.id}`}>{author.name}</Link>
         </div>
       ))}
     </div>
