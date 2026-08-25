@@ -20,12 +20,12 @@ Tukuma Raiņa Valsts ģimnāzija · 3 mācību stundas nedēļā
 
 | Bloks | Tēma | Stundas | Valoda |
 | --- | --- | --- | --- |
-| 01 | Objektorientētā programmēšana | 16 | Python |
-| 02 | Datubāzes un SQL | 16 | SQL |
-| 03 | Bibliotēkas, API un dati no tīmekļa | 14 | Python |
-| 04 | Lietotāju izpēte, specifikācija, projekta vadība | 16 | — |
-| 05 | Tīkls, serveris, drošība, mašīnmācīšanās | 14 | JavaScript |
-| 06 | Gala projekts: pilns cikls un ieviešana | 24 | JS + SQL |
+| [01](01-oop/) | Objektorientētā programmēšana | 16 | Python |
+| [02](02-datubazes/) | Datubāzes un SQL | 16 | SQL |
+| [03](03-bibliotekas/) | Bibliotēkas, API un dati no tīmekļa | 14 | Python |
+| [04](04-izpete-un-specifikacija/) | Lietotāju izpēte, specifikācija, projekta vadība | 16 | — |
+| [05](05-tikls-un-serveris/) | Tīkls, serveris, drošība, mašīnmācīšanās | 14 | JavaScript |
+| [06](06-projekts/) | Gala projekts: pilns cikls un ieviešana | 24 | JS + SQL |
 
 - [Kursa programma un sasniedzamie rezultāti](kurss/programma.md)
 - [Gada plāns](kurss/plans.md)
