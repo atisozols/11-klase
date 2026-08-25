@@ -4,6 +4,7 @@ __pycache__/
 node_modules/
 .next/
 .env
+*.db
 
 # Skolēnu iesniegtie darbi netiek glabāti publiskā repozitorijā
 iesniegumi/
