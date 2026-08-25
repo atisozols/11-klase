@@ -1,3 +1,9 @@
-node_modules/
-.env
 .DS_Store
+__pycache__/
+*.pyc
+node_modules/
+.next/
+.env
+
+# Skolēnu iesniegtie darbi netiek glabāti publiskā repozitorijā
+iesniegumi/
