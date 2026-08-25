@@ -10,8 +10,8 @@ kas notiek starp pārlūku un serveri.
 **Datubāze:** izmantojam to pašu [`skola.db`](../02-datubazes/skola.db)
 **Noslēgums:** SV5 — papīra darbs (11-076)
 
-**Rīki.** Node.js, Express, Knex un `sqlite3` draiveris. Datubāze ir tā pati, ko izmantojām
-02. blokā — nekāds serveris nav jāuzstāda.
+**Rīki.** Node.js, Express, Knex un `sqlite3` draiveris. Datubāze ir tā pati, ko lietojām
+iepriekšējā blokā — nekāds serveris nav jāuzstāda.
 
 ```bash
 npm init -y
