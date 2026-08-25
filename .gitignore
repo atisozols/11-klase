@@ -5,6 +5,7 @@ node_modules/
 .next/
 .env
 *.db
+!02-datubazes/skola.db
 
 # Skolēnu iesniegtie darbi netiek glabāti publiskā repozitorijā
 iesniegumi/
