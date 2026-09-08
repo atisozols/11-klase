@@ -35,16 +35,16 @@ atzimes = [[8, 9, 7], [6, 5, 8]]
 #   klase Skolens        -> veidne: katram skolēnam ir vārds un klase
 #   objekts anna         -> konkrēts skolēns ar konkrētām vērtībām
 
-class Punkts:
-    x = 0
-    y = 0
-
+# class Punkts:
+#     x = 0
+#     y = 0
 
 # a = Punkts()
 # b = Punkts()
 # a.x = 3
 # a.y = 4
-# print(a.x, a.y)
+# a.z = 5
+# print(a.x, a.y, a.z)
 # print(b.x, b.y)      # ?   vai b mainījās kopā ar a?
 
 # Šāda klase ir reti noderīga — vērtības jāpiešķir pa vienai pēc
@@ -61,7 +61,6 @@ class Skolens:
     def __init__(self, vards, klase):
         self.vards = vards
         self.klase = klase
-
 
 # anna = Skolens("Anna", "11.a")
 # roberts = Skolens("Roberts", "11.b")

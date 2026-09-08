@@ -41,18 +41,31 @@
 # 5. Izveido klasi Skolens ar atribūtiem vards un klase. Izveido divus objektus un
 #    izvadi to atribūtus.
 
+class Skolens:
+    def __init__(self, vards, klase):
+        self.vards = vards
+        self.klase = klase
 
+kristers = Skolens("Kristers", "10.c")
+janis = Skolens("Jānis", "9.b")
 
+print(kristers.vards, kristers.klase)
 
 # 6. Izveido klasi Prece ar atribūtiem nosaukums un cena. Izveido trīs objektus.
 
+class Prece:
+    def __init__(self, nosaukums, cena):
+        self.nosaukums = nosaukums
+        self.cena = cena
 
-
+p1 = Prece("Twix", 0.79)
+p2 = Prece("Snickers", 0.89)
+p3 = Prece("Mars", 0.67)
 
 # 7. Nomaini viena objekta atribūta vērtību un pārbaudi, ka otrs objekts nemainījās.
 
-
-
+p1.nosaukums = "Bounty"
+# print(p1.nosaukums)
 
 # 8. Izveido klasi Punkts ar atribūtiem x un y un izvadi divu punktu koordinātas.
 
@@ -63,7 +76,8 @@
 #    (==). Paskaidro rezultātu.
 
 
-
+p4 = Prece("Mars", 0.67)
+p5 = Prece("Mars", 0.67)
 
 
 # ----------------------------------------------------------
@@ -78,14 +92,23 @@
 # 11. Izveido klasi Gramata ar konstruktoru (nosaukums, autors, gads) un izveido
 #    trīs objektus.
 
+class Gramata:
+    def __init__(self, nosaukums, autors, gads):
+        self.nosaukums = nosaukums
+        self.autors = autors
+        self.gads = gads
 
-
+g1 = Gramata("The Brand Gap", "Marty Neumeier", "2018")
+g2 = Gramata("Influence", "Robert B. Cialdini", "2012")
+g3 = Gramata("Thinking, Fast and Slow", "Daniel Kahneman", "2012")
 
 # 12. Izveido klasi Konts ar konstruktoru (ipasnieks, atlikums) un izvadi abu kontu
 #    atlikumus.
 
-
-
+class Konts:
+    def __init__(self, ipasnieks, atlikums=0):
+        self.ipasnieks = ipasnieks
+        self.atlikums = atlikums
 
 # 13. Izveido klasi Taisnsturis ar konstruktoru (platums, augstums).
 
@@ -95,7 +118,10 @@
 # 14. ★ Uzraksti konstruktoru, kuram daļai parametru ir noklusējuma vērtības, un izveido
 #    objektus abos veidos.
 
+atis = Konts("Atis")
+konrads = Konts("Konrāds", 123)
 
+print(atis.atlikums, konrads.atlikums)
 
 
 
