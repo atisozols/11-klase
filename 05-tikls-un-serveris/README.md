@@ -20,22 +20,22 @@ npm install express knex sqlite3
 
 <!-- TABULA:SAKUMS · pēc izmaiņām: python3 bin/tabula.py 05-tikls-un-serveris/README.md && python3 bin/darbafails.py 05-tikls-un-serveris -->
 
-| Nr. | Tēma | Sasniedzamais rezultāts |
-| --- | --- | --- |
-| 11-063 | Klienta un servera arhitektūra. Kas notiek, atverot tīmekļa lapu. | Apraksta soļus no adreses ievadīšanas līdz lapas parādīšanai. |
-| 11-064 | HTTP protokols. Pieprasījums, atbilde, statusa kodi. | Izpēta tīkla pieprasījumus pārlūka rīkos un skaidro statusa kodus. |
-| 11-065 | Node.js un Express. Servera izveide. | Izveido un palaiž tīmekļa serveri, kas atbild uz pieprasījumu. |
-| 11-066 | Maršruti ar parametriem. JSON atbilde. | Veido maršrutus ar parametriem un atgriež datus JSON formātā. |
-| 11-067 | Datu pieprasīšana no pārlūka. `fetch` un DOM. | Pieprasa datus no sava servera un attēlo tos lapā. |
-| 11-068 | Knex un SQLite. Datubāzes pieslēgšana serverim. | Pieslēdz datubāzi serverim un atgriež no tās datus. |
-| 11-069 | Pilna datu ķēde: datubāze → serveris → JSON → pārlūks. | Izveido risinājumu, kurā dati no datubāzes nonāk līdz lietotāja ekrānam. |
-| 11-070 | Datu sūtīšana uz serveri. Formas un POST pieprasījumi. | Pieņem serverī lietotāja ievadītos datus un saglabā tos datubāzē. |
-| 11-071 | Kļūdu apstrāde un statusa kodi servera pusē. | Atgriež pareizu statusa kodu un saprotamu paziņojumu katrā kļūdas gadījumā. |
-| 11-072 | Lokālais tīkls. IP adreses, maršrutētājs, portu pāradresācija. | Skaidro lokālā tīkla uzbūvi un konfigurē piekļuves punktu. |
-| 11-073 | HTTPS, paroļu glabāšana, jaucējfunkcijas. | Skaidro, kāpēc paroles neglabā atklātā tekstā, un lieto jaucējfunkciju. |
-| 11-074 | Mašīnmācīšanās pamatprincipi. Atšķirība no algoritma. | Skaidro, ar ko mašīnmācīšanās atšķiras no parasta algoritma un kas tai nepieciešams. |
-| 11-075 | Gatava mašīnmācīšanās risinājuma izmantošana. Ētikas jautājumi. | Izmanto gatavu modeli un izvērtē tā lietojuma ietekmi. |
-| 11-076 | Pārbaudes darbs: klients un serveris, HTTP, drošība, mašīnmācīšanās. | Demonstrē bloka sasniedzamos rezultātus patstāvīgā darbā. |
+| Nr. | Tēma | Sasniedzamais rezultāts | Pārbaude |
+| --- | --- | --- | --- |
+| 11-063 | Klienta un servera arhitektūra. Kas notiek, atverot tīmekļa lapu. | Apraksta soļus no adreses ievadīšanas līdz lapas parādīšanai. |  |
+| 11-064 | HTTP protokols. Pieprasījums, atbilde, statusa kodi. | Izpēta tīkla pieprasījumus pārlūka rīkos un skaidro statusa kodus. |  |
+| 11-065 | Node.js un Express. Servera izveide. | Izveido un palaiž tīmekļa serveri, kas atbild uz pieprasījumu. |  |
+| 11-066 | Maršruti ar parametriem. JSON atbilde. | Veido maršrutus ar parametriem un atgriež datus JSON formātā. |  |
+| 11-067 | Datu pieprasīšana no pārlūka. `fetch` un DOM. | Pieprasa datus no sava servera un attēlo tos lapā. |  |
+| 11-068 | Knex un SQLite. Datubāzes pieslēgšana serverim. | Pieslēdz datubāzi serverim un atgriež no tās datus. |  |
+| 11-069 | Pilna datu ķēde: datubāze → serveris → JSON → pārlūks. | Izveido risinājumu, kurā dati no datubāzes nonāk līdz lietotāja ekrānam. | **FV9** (dators) |
+| 11-070 | Datu sūtīšana uz serveri. Formas un POST pieprasījumi. | Pieņem serverī lietotāja ievadītos datus un saglabā tos datubāzē. |  |
+| 11-071 | Kļūdu apstrāde un statusa kodi servera pusē. | Atgriež pareizu statusa kodu un saprotamu paziņojumu katrā kļūdas gadījumā. |  |
+| 11-072 | Lokālais tīkls. IP adreses, maršrutētājs, portu pāradresācija. | Skaidro lokālā tīkla uzbūvi un konfigurē piekļuves punktu. |  |
+| 11-073 | HTTPS, paroļu glabāšana, jaucējfunkcijas. | Skaidro, kāpēc paroles neglabā atklātā tekstā, un lieto jaucējfunkciju. |  |
+| 11-074 | Mašīnmācīšanās pamatprincipi. Atšķirība no algoritma. | Skaidro, ar ko mašīnmācīšanās atšķiras no parasta algoritma un kas tai nepieciešams. | **FV10** (papīrs) |
+| 11-075 | Gatava mašīnmācīšanās risinājuma izmantošana. Ētikas jautājumi. | Izmanto gatavu modeli un izvērtē tā lietojuma ietekmi. |  |
+| 11-076 | Pārbaudes darbs: klients un serveris, HTTP, drošība, mašīnmācīšanās. | Demonstrē bloka sasniedzamos rezultātus patstāvīgā darbā. | **SV5** |
 
 <!-- TABULA:BEIGAS -->
 

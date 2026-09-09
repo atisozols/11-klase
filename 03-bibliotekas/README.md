@@ -12,22 +12,22 @@ programmsaskarnes (API), tos apstrādāt un attēlot.
 
 <!-- TABULA:SAKUMS · pēc izmaiņām: python3 bin/tabula.py 03-bibliotekas/README.md && python3 bin/darbafails.py 03-bibliotekas -->
 
-| Nr. | Tēma | Sasniedzamais rezultāts |
-| --- | --- | --- |
-| 11-033 | Modulis, bibliotēka, pakotne. Koda importēšana. | Importē moduli un lieto tā funkcijas; sadala savu kodu vairākos moduļos. |
-| 11-034 | Standarta bibliotēka: `math`, `random`, `datetime`, `statistics`. | Izvēlas standarta bibliotēkas funkciju uzdevuma risināšanai, nevis raksta to pats. |
-| 11-035 | Ārējas bibliotēkas meklēšana, uzstādīšana un dokumentācijas lasīšana. | Atrod uzdevumam piemērotu bibliotēku, uzstāda to ar `pip` un lieto pēc dokumentācijas. |
-| 11-036 | JSON formāts. Datu struktūra un pārveide. | Nolasa JSON datus un piekļūst vajadzīgajām vērtībām ligzdotā struktūrā. |
-| 11-037 | Programmsaskarne (API). Pieprasījums un atbilde. | Nosūta pieprasījumu publiskai API un apstrādā saņemtos datus. |
-| 11-038 | Pieprasījuma parametri. Atbildes filtrēšana un apstrāde. | Veido pieprasījumu ar parametriem un no atbildes atlasa vajadzīgo. |
-| 11-039 | Praktikums: datu ieguve un apstrāde no API. | Patstāvīgi iegūst datus no API, apstrādā tos un saglabā rezultātu. |
-| 11-040 | API atslēgas. Noslēpumu glabāšana ārpus koda. | Skaidro, kāpēc atslēgu nedrīkst rakstīt kodā, un glabā to atsevišķi. |
-| 11-041 | Kļūdu apstrāde tīmekļa pieprasījumos. | Apstrādā tīkla kļūdas un negaidītas atbildes, neļaujot programmai avarēt. |
-| 11-042 | Iegūto datu attēlošana. Informācijas dizaina pamatprincipi. | Sagatavo datus un izveido diagrammu, kas atbild uz konkrētu jautājumu. |
-| 11-043 | Atvērtā koda licences. Bibliotēkas izvēles kritēriji. | Salīdzina atvērtā koda licences un pamato bibliotēkas izvēli savam projektam. |
-| 11-044 | Praktikums: pilna datu ķēde no API līdz attēlojumam. | Iegūst datus no API, apstrādā, saglabā un attēlo tos. |
-| 11-045 | Bibliotēkas un API: atkārtojums pirms pārbaudes darba. | Atkārto bloka prasmes un pārbauda savu darba vidi. |
-| 11-046 | Pārbaudes darbs: programma ar ārēju bibliotēku un API. | Demonstrē bloka sasniedzamos rezultātus patstāvīgā darbā. |
+| Nr. | Tēma | Sasniedzamais rezultāts | Pārbaude |
+| --- | --- | --- | --- |
+| 11-033 | Modulis, bibliotēka, pakotne. Koda importēšana. | Importē moduli un lieto tā funkcijas; sadala savu kodu vairākos moduļos. |  |
+| 11-034 | Standarta bibliotēka: `math`, `random`, `datetime`, `statistics`. | Izvēlas standarta bibliotēkas funkciju uzdevuma risināšanai, nevis raksta to pats. |  |
+| 11-035 | Ārējas bibliotēkas meklēšana, uzstādīšana un dokumentācijas lasīšana. | Atrod uzdevumam piemērotu bibliotēku, uzstāda to ar `pip` un lieto pēc dokumentācijas. |  |
+| 11-036 | JSON formāts. Datu struktūra un pārveide. | Nolasa JSON datus un piekļūst vajadzīgajām vērtībām ligzdotā struktūrā. |  |
+| 11-037 | Programmsaskarne (API). Pieprasījums un atbilde. | Nosūta pieprasījumu publiskai API un apstrādā saņemtos datus. |  |
+| 11-038 | Pieprasījuma parametri. Atbildes filtrēšana un apstrāde. | Veido pieprasījumu ar parametriem un no atbildes atlasa vajadzīgo. |  |
+| 11-039 | Praktikums: datu ieguve un apstrāde no API. | Patstāvīgi iegūst datus no API, apstrādā tos un saglabā rezultātu. | **FV5** (dators) |
+| 11-040 | API atslēgas. Noslēpumu glabāšana ārpus koda. | Skaidro, kāpēc atslēgu nedrīkst rakstīt kodā, un glabā to atsevišķi. |  |
+| 11-041 | Kļūdu apstrāde tīmekļa pieprasījumos. | Apstrādā tīkla kļūdas un negaidītas atbildes, neļaujot programmai avarēt. |  |
+| 11-042 | Iegūto datu attēlošana. Informācijas dizaina pamatprincipi. | Sagatavo datus un izveido diagrammu, kas atbild uz konkrētu jautājumu. |  |
+| 11-043 | Atvērtā koda licences. Bibliotēkas izvēles kritēriji. | Salīdzina atvērtā koda licences un pamato bibliotēkas izvēli savam projektam. | **FV6** (papīrs) |
+| 11-044 | Praktikums: pilna datu ķēde no API līdz attēlojumam. | Iegūst datus no API, apstrādā, saglabā un attēlo tos. |  |
+| 11-045 | Bibliotēkas un API: atkārtojums pirms pārbaudes darba. | Atkārto bloka prasmes un pārbauda savu darba vidi. |  |
+| 11-046 | Pārbaudes darbs: programma ar ārēju bibliotēku un API. | Demonstrē bloka sasniedzamos rezultātus patstāvīgā darbā. | **SV3** |
 
 <!-- TABULA:BEIGAS -->
 

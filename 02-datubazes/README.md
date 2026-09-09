@@ -21,24 +21,24 @@ vienīgā vietne, ko atļauj eksāmens.
 
 <!-- TABULA:SAKUMS · pēc izmaiņām: python3 bin/tabula.py 02-datubazes/README.md && python3 bin/darbafails.py 02-datubazes -->
 
-| Nr. | Tēma | Sasniedzamais rezultāts |
-| --- | --- | --- |
-| 11-017 | Datubāzes jēdziens. No datnes uz datubāzi. | Skaidro, kādas problēmas rodas, glabājot datus CSV datnē, un kā tās risina datubāze. |
-| 11-018 | Tabula, ieraksts, lauks. Datu tipi un primārā atslēga. | Nosauc tabulas daļas, izvēlas lauka datu tipu un skaidro primārās atslēgas nozīmi. |
-| 11-019 | Vaicājums `SELECT`. Datu atlase ar `WHERE`. | Uzraksta vaicājumu, kas atlasa noteiktus laukus un ierakstus. |
-| 11-020 | `ORDER BY`, `LIMIT`, `DISTINCT`. | Sakārto un ierobežo vaicājuma rezultātu. |
-| 11-021 | `AND`, `OR`, `IN`, `BETWEEN`, `LIKE`, `NULL`. | Veido saliktus atlases nosacījumus un meklē tekstā. |
-| 11-022 | `COUNT`, `SUM`, `AVG`, `MIN`, `MAX`. | Aprēķina kopsavilkuma vērtības no daudziem ierakstiem. |
-| 11-023 | Grupēšana ar `GROUP BY` un filtrēšana ar `HAVING`. | Sagrupē ierakstus pēc lauka un aprēķina kopsavilkumu katrai grupai. |
-| 11-024 | Saistītas tabulas. Ārējā atslēga. Saistību veidi 1:1, 1:N, N:M. | Atpazīst tabulu saistības un skaidro, kāpēc dati ir sadalīti vairākās tabulās. |
-| 11-025 | Tabulu savienošana ar `INNER JOIN`. | Savieno divas tabulas un izvada datus no abām. |
-| 11-026 | `LEFT JOIN`. Agregātfunkcijas pār savienotām tabulām. | Izvēlas piemērotu savienojuma veidu un aprēķina kopsavilkumu pār vairākām tabulām. |
-| 11-027 | No apraksta uz datubāzes shēmu. | Izplāno datubāzi ar vairākām saistītām tabulām atbilstoši uzdevuma aprakstam. |
-| 11-028 | Tabulu izveide. Datu tipi un ierobežojumi. | Izveido tabulas ar primārajām un ārējām atslēgām DB Browser for SQLite vidē. |
-| 11-029 | `INSERT`, `UPDATE`, `DELETE`. | Pievieno, maina un dzēš ierakstus, saprotot izmaiņu neatgriezeniskumu. |
-| 11-030 | Datu validācija un integritāte datubāzē. | Skaidro, kā ierobežojumi pasargā datus, un pievieno tos savai tabulai. |
-| 11-031 | Datubāzes un SQL: atkārtojums. Gatavošanās biļetēm. | Atkārto bloka jēdzienus un vingrinās mutiski pamatot savu vaicājumu. |
-| 11-032 | Pārbaudes darbs: datubāzes plānošana un SQL vaicājumi. | Demonstrē bloka sasniedzamos rezultātus, aizstāvot atbildi mutiski. |
+| Nr. | Tēma | Sasniedzamais rezultāts | Pārbaude |
+| --- | --- | --- | --- |
+| 11-017 | Datubāzes jēdziens. No datnes uz datubāzi. | Skaidro, kādas problēmas rodas, glabājot datus CSV datnē, un kā tās risina datubāze. |  |
+| 11-018 | Tabula, ieraksts, lauks. Datu tipi un primārā atslēga. | Nosauc tabulas daļas, izvēlas lauka datu tipu un skaidro primārās atslēgas nozīmi. |  |
+| 11-019 | Vaicājums `SELECT`. Datu atlase ar `WHERE`. | Uzraksta vaicājumu, kas atlasa noteiktus laukus un ierakstus. |  |
+| 11-020 | `ORDER BY`, `LIMIT`, `DISTINCT`. | Sakārto un ierobežo vaicājuma rezultātu. |  |
+| 11-021 | `AND`, `OR`, `IN`, `BETWEEN`, `LIKE`, `NULL`. | Veido saliktus atlases nosacījumus un meklē tekstā. |  |
+| 11-022 | `COUNT`, `SUM`, `AVG`, `MIN`, `MAX`. | Aprēķina kopsavilkuma vērtības no daudziem ierakstiem. |  |
+| 11-023 | Grupēšana ar `GROUP BY` un filtrēšana ar `HAVING`. | Sagrupē ierakstus pēc lauka un aprēķina kopsavilkumu katrai grupai. | **FV3** (dators) |
+| 11-024 | Saistītas tabulas. Ārējā atslēga. Saistību veidi 1:1, 1:N, N:M. | Atpazīst tabulu saistības un skaidro, kāpēc dati ir sadalīti vairākās tabulās. |  |
+| 11-025 | Tabulu savienošana ar `INNER JOIN`. | Savieno divas tabulas un izvada datus no abām. |  |
+| 11-026 | `LEFT JOIN`. Agregātfunkcijas pār savienotām tabulām. | Izvēlas piemērotu savienojuma veidu un aprēķina kopsavilkumu pār vairākām tabulām. |  |
+| 11-027 | No apraksta uz datubāzes shēmu. | Izplāno datubāzi ar vairākām saistītām tabulām atbilstoši uzdevuma aprakstam. |  |
+| 11-028 | Tabulu izveide. Datu tipi un ierobežojumi. | Izveido tabulas ar primārajām un ārējām atslēgām DB Browser for SQLite vidē. |  |
+| 11-029 | `INSERT`, `UPDATE`, `DELETE`. | Pievieno, maina un dzēš ierakstus, saprotot izmaiņu neatgriezeniskumu. | **FV4** (papīrs) |
+| 11-030 | Datu validācija un integritāte datubāzē. | Skaidro, kā ierobežojumi pasargā datus, un pievieno tos savai tabulai. |  |
+| 11-031 | Datubāzes un SQL: atkārtojums. Gatavošanās biļetēm. | Atkārto bloka jēdzienus un vingrinās mutiski pamatot savu vaicājumu. |  |
+| 11-032 | Pārbaudes darbs: datubāzes plānošana un SQL vaicājumi. | Demonstrē bloka sasniedzamos rezultātus, aizstāvot atbildi mutiski. | **SV2** |
 
 <!-- TABULA:BEIGAS -->
 

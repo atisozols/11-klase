@@ -16,24 +16,24 @@ specifikāciju, pēc kuras var izstrādāt risinājumu.
 
 <!-- TABULA:SAKUMS · pēc izmaiņām: python3 bin/tabula.py 04-izpete-un-specifikacija/README.md && python3 bin/darbafails.py 04-izpete-un-specifikacija -->
 
-| Nr. | Tēma | Sasniedzamais rezultāts |
-| --- | --- | --- |
-| 11-047 | Prasību problēma. Kāpēc programmatūra neatbilst vajadzībām. | Skaidro, kā rodas neatbilstība starp pasūtīto un izstrādāto, un kā to novērš specifikācija. |
-| 11-048 | Ieinteresētās puses un mērķauditorija. | Nosaka risinājuma ieinteresētās puses un izvēlas mērķauditoriju. |
-| 11-049 | Lietotāju izpētes metodes: intervija, aptauja, novērojums, esošo risinājumu analīze. | Izvēlas uzdevumam piemērotu izpētes metodi un pamato izvēli. |
-| 11-050 | Intervijas jautājumu veidošana. Labs un slikts jautājums. | Formulē atvērtus jautājumus, kas neuzspiež atbildi. |
-| 11-051 | Aptaujas izveide. Jautājumu veidi un datu validācija. | Izveido aptauju ar derīgiem jautājumu veidiem un iebūvētu datu pārbaudi. |
-| 11-052 | Izpētes plāna īstenošana. | Veic interviju vai novērojumu un dokumentē iegūto. |
-| 11-053 | Aptaujas datu apkopošana un attēlošana ar programmu. | Apstrādā aptaujas CSV datus un izveido kopsavilkumu, kas atbild uz izpētes jautājumu. |
-| 11-054 | Lietotāja stāsti. No izpētes datiem uz konkrētām vajadzībām. | Pārvērš izpētes rezultātus lietotāja stāstos. |
-| 11-055 | Funkcionālās un nefunkcionālās prasības. | Atšķir funkcionālās un nefunkcionālās prasības un formulē tās pārbaudāmi. |
-| 11-056 | Programmatūras prasību specifikācijas uzbūve. | Nosauc specifikācijas daļas un skaidro, kam katra vajadzīga. |
-| 11-057 | Lietotāja saskarnes struktūrskice (wireframe). HTML un CSS atkārtojums. | Izveido saskarnes skici un attēlo to kā vienkāršu HTML lapu. |
-| 11-058 | Uzdevumu sadalīšana un projekta vadības rīki. | Sadala projektu izpildāmos uzdevumos un ievieto tos projekta vadības rīkā. |
-| 11-059 | Laika plānošana. Ganta diagramma. | Izplāno projekta izstrādi laikā un nosaka starpposmu termiņus. |
-| 11-060 | Specifikācijas pabeigšana. | Pabeidz programmatūras prasību specifikāciju atbilstoši veidnei. |
-| 11-061 | Specifikācijas recenzēšana. Atgriezeniskā saite. | Izvērtē citu specifikāciju pēc kritērijiem un sniedz konkrētu atgriezenisko saiti. |
-| 11-062 | Specifikācijas aizstāvēšana. Izpētes un lēmumu pamatošana. | Pamato savu izpēti, izvēles un prasības, atbildot uz jautājumiem. |
+| Nr. | Tēma | Sasniedzamais rezultāts | Pārbaude |
+| --- | --- | --- | --- |
+| 11-047 | Prasību problēma. Kāpēc programmatūra neatbilst vajadzībām. | Skaidro, kā rodas neatbilstība starp pasūtīto un izstrādāto, un kā to novērš specifikācija. |  |
+| 11-048 | Ieinteresētās puses un mērķauditorija. | Nosaka risinājuma ieinteresētās puses un izvēlas mērķauditoriju. |  |
+| 11-049 | Lietotāju izpētes metodes: intervija, aptauja, novērojums, esošo risinājumu analīze. | Izvēlas uzdevumam piemērotu izpētes metodi un pamato izvēli. |  |
+| 11-050 | Intervijas jautājumu veidošana. Labs un slikts jautājums. | Formulē atvērtus jautājumus, kas neuzspiež atbildi. |  |
+| 11-051 | Aptaujas izveide. Jautājumu veidi un datu validācija. | Izveido aptauju ar derīgiem jautājumu veidiem un iebūvētu datu pārbaudi. | **FV7** (papīrs) |
+| 11-052 | Izpētes plāna īstenošana. | Veic interviju vai novērojumu un dokumentē iegūto. |  |
+| 11-053 | Aptaujas datu apkopošana un attēlošana ar programmu. | Apstrādā aptaujas CSV datus un izveido kopsavilkumu, kas atbild uz izpētes jautājumu. | **FV8** (dators) |
+| 11-054 | Lietotāja stāsti. No izpētes datiem uz konkrētām vajadzībām. | Pārvērš izpētes rezultātus lietotāja stāstos. |  |
+| 11-055 | Funkcionālās un nefunkcionālās prasības. | Atšķir funkcionālās un nefunkcionālās prasības un formulē tās pārbaudāmi. |  |
+| 11-056 | Programmatūras prasību specifikācijas uzbūve. | Nosauc specifikācijas daļas un skaidro, kam katra vajadzīga. |  |
+| 11-057 | Lietotāja saskarnes struktūrskice (wireframe). HTML un CSS atkārtojums. | Izveido saskarnes skici un attēlo to kā vienkāršu HTML lapu. |  |
+| 11-058 | Uzdevumu sadalīšana un projekta vadības rīki. | Sadala projektu izpildāmos uzdevumos un ievieto tos projekta vadības rīkā. |  |
+| 11-059 | Laika plānošana. Ganta diagramma. | Izplāno projekta izstrādi laikā un nosaka starpposmu termiņus. |  |
+| 11-060 | Specifikācijas pabeigšana. | Pabeidz programmatūras prasību specifikāciju atbilstoši veidnei. |  |
+| 11-061 | Specifikācijas recenzēšana. Atgriezeniskā saite. | Izvērtē citu specifikāciju pēc kritērijiem un sniedz konkrētu atgriezenisko saiti. |  |
+| 11-062 | Specifikācijas aizstāvēšana. Izpētes un lēmumu pamatošana. | Pamato savu izpēti, izvēles un prasības, atbildot uz jautājumiem. | **SV4** |
 
 <!-- TABULA:BEIGAS -->
 

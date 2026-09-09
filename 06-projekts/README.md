@@ -14,32 +14,32 @@ aizstāvēšana (11-099, 11-100)
 
 <!-- TABULA:SAKUMS · pēc izmaiņām: python3 bin/tabula.py 06-projekts/README.md && python3 bin/darbafails.py 06-projekts -->
 
-| Nr. | Tēma | Sasniedzamais rezultāts |
-| --- | --- | --- |
-| 11-077 | No specifikācijas uz darba plānu. Repozitorija sagatavošana. | Sagatavo projekta repozitoriju un pārbauda, ka specifikācija ir izpildāma. |
-| 11-078 | Projekta datubāzes izveide. | Izveido projekta datubāzi ar visām tabulām un saistībām. |
-| 11-079 | Servera izveide un datu izgūšana. | Izveido serveri, kas atgriež datus no projekta datubāzes. |
-| 11-080 | `POST` maršruti un validācija. | Pieņem un pārbauda lietotāja datus serverī. |
-| 11-081 | Klienta puses izveide. Datu attēlošana. | Izveido lapu, kas attēlo datus no sava servera. |
-| 11-082 | Datu ievade no klienta puses. | Izveido formu, kas nosūta datus serverim un atsvaidzina skatu. |
-| 11-083 | Projekta izstrāde pēc plāna. | Realizē nākamās specifikācijas prasības. |
-| 11-084 | Starpposma demonstrācija un atgriezeniskā saite. | Demonstrē paveikto un sniedz citiem konkrētu atgriezenisko saiti. |
-| 11-085 | Uzlabojumi pēc atgriezeniskās saites. | Ievieš uzlabojumus un pārbauda tos. |
-| 11-086 | Projekta izstrāde. | Realizē atlikušās galvenās prasības. |
-| 11-087 | Projekta izstrāde. | Pabeidz obligāto funkcionalitāti. |
-| 11-088 | Koda strukturēšana un labās prakses principi. | Sakārto kodu: sadala failos, izmet lieko, pievieno komentārus. |
-| 11-089 | Akcepttestēšana pret specifikāciju. | Izveido testa plānu, kas pārbauda katru specifikācijas prasību. |
-| 11-090 | Testa plāna izpilde. | Izpilda testus un dokumentē rezultātus. |
-| 11-091 | Testēšanā atrasto kļūdu novēršana. | Novērš kļūdas un atkārtoti izpilda attiecīgos testus. |
-| 11-092 | Otrā demonstrācija. Gatavības izvērtējums. | Demonstrē gandrīz gatavu risinājumu un plāno atlikušo darbu. |
-| 11-093 | Minimālās drošības prasības. | Pārbauda un novērš savas lietotnes drošības trūkumus. |
-| 11-094 | Risinājuma ieviešana. Publicēšana internetā. | Publicē savu risinājumu publiski pieejamā vietā. |
-| 11-095 | Lietotāja ceļvedis un projekta dokumentācija. | Uzraksta lietotājam saprotamu pamācību un projekta aprakstu. |
-| 11-096 | Licences izvēle. Intelektuālā īpašuma aizsardzība. | Izvēlas savam projektam licenci un pamato izvēli. |
-| 11-097 | Projekta prezentācijas sagatavošana. | Sagatavo demonstrāciju, kas parāda problēmu, risinājumu un izstrādes gaitu. |
-| 11-098 | Pēdējie labojumi un pašpārbaude. | Pabeidz projektu un pārbauda tā atbilstību specifikācijai. |
-| 11-099 | Projekta demonstrācija un aizstāvēšana. | Demonstrē risinājumu un pamato izstrādes laikā pieņemtos lēmumus. |
-| 11-100 | Projekta aizstāvēšana. Kursa noslēgums. | Demonstrē risinājumu; reflektē par divos gados apgūto. |
+| Nr. | Tēma | Sasniedzamais rezultāts | Pārbaude |
+| --- | --- | --- | --- |
+| 11-077 | No specifikācijas uz darba plānu. Repozitorija sagatavošana. | Sagatavo projekta repozitoriju un pārbauda, ka specifikācija ir izpildāma. |  |
+| 11-078 | Projekta datubāzes izveide. | Izveido projekta datubāzi ar visām tabulām un saistībām. |  |
+| 11-079 | Servera izveide un datu izgūšana. | Izveido serveri, kas atgriež datus no projekta datubāzes. |  |
+| 11-080 | `POST` maršruti un validācija. | Pieņem un pārbauda lietotāja datus serverī. |  |
+| 11-081 | Klienta puses izveide. Datu attēlošana. | Izveido lapu, kas attēlo datus no sava servera. |  |
+| 11-082 | Datu ievade no klienta puses. | Izveido formu, kas nosūta datus serverim un atsvaidzina skatu. |  |
+| 11-083 | Projekta izstrāde pēc plāna. | Realizē nākamās specifikācijas prasības. |  |
+| 11-084 | Starpposma demonstrācija un atgriezeniskā saite. | Demonstrē paveikto un sniedz citiem konkrētu atgriezenisko saiti. |  |
+| 11-085 | Uzlabojumi pēc atgriezeniskās saites. | Ievieš uzlabojumus un pārbauda tos. | **FV11** (dators) |
+| 11-086 | Projekta izstrāde. | Realizē atlikušās galvenās prasības. |  |
+| 11-087 | Projekta izstrāde. | Pabeidz obligāto funkcionalitāti. |  |
+| 11-088 | Koda strukturēšana un labās prakses principi. | Sakārto kodu: sadala failos, izmet lieko, pievieno komentārus. |  |
+| 11-089 | Akcepttestēšana pret specifikāciju. | Izveido testa plānu, kas pārbauda katru specifikācijas prasību. |  |
+| 11-090 | Testa plāna izpilde. | Izpilda testus un dokumentē rezultātus. |  |
+| 11-091 | Testēšanā atrasto kļūdu novēršana. | Novērš kļūdas un atkārtoti izpilda attiecīgos testus. |  |
+| 11-092 | Otrā demonstrācija. Gatavības izvērtējums. | Demonstrē gandrīz gatavu risinājumu un plāno atlikušo darbu. |  |
+| 11-093 | Minimālās drošības prasības. | Pārbauda un novērš savas lietotnes drošības trūkumus. |  |
+| 11-094 | Risinājuma ieviešana. Publicēšana internetā. | Publicē savu risinājumu publiski pieejamā vietā. | **FV12** (dators) |
+| 11-095 | Lietotāja ceļvedis un projekta dokumentācija. | Uzraksta lietotājam saprotamu pamācību un projekta aprakstu. |  |
+| 11-096 | Licences izvēle. Intelektuālā īpašuma aizsardzība. | Izvēlas savam projektam licenci un pamato izvēli. |  |
+| 11-097 | Projekta prezentācijas sagatavošana. | Sagatavo demonstrāciju, kas parāda problēmu, risinājumu un izstrādes gaitu. |  |
+| 11-098 | Pēdējie labojumi un pašpārbaude. | Pabeidz projektu un pārbauda tā atbilstību specifikācijai. |  |
+| 11-099 | Projekta demonstrācija un aizstāvēšana. | Demonstrē risinājumu un pamato izstrādes laikā pieņemtos lēmumus. | **SV6** |
+| 11-100 | Projekta aizstāvēšana. Kursa noslēgums. | Demonstrē risinājumu; reflektē par divos gados apgūto. | **SV6** |
 
 <!-- TABULA:BEIGAS -->
 

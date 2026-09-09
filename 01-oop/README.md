@@ -12,24 +12,24 @@ dati un darbības ar tiem ir vienuviet.
 
 <!-- TABULA:SAKUMS · pēc izmaiņām: python3 bin/tabula.py 01-oop/README.md && python3 bin/darbafails.py 01-oop -->
 
-| Nr. | Tēma | Sasniedzamais rezultāts |
-| --- | --- | --- |
-| 11-001 | Objektorientētās programmēšanas jēdziens. No mainīgajiem un funkcijām uz objektiem. | Skaidro, kāda problēma rodas, glabājot saistītus datus atsevišķos mainīgajos, un kā to risina klase. |
-| 11-002 | Klases definēšana. Objekta izveide. Atribūti. | Definē klasi ar atribūtiem un izveido no tās objektus. |
-| 11-003 | Konstruktors `__init__`. Objekta izveide ar sākuma vērtībām. | Uzraksta konstruktoru, kas objekta izveides brīdī piešķir atribūtiem vērtības. |
-| 11-004 | Metodes. Darbības, kas pieder objektam. | Definē metodi, kas izmanto objekta atribūtus, un izsauc to. |
-| 11-005 | Atslēgvārds `self` un tā nozīme. | Skaidro, ko nozīmē `self`, un atšķir objekta atribūtu no lokāla mainīgā. |
-| 11-006 | Metodes, kas maina objekta stāvokli. | Uzraksta metodes, kas maina objekta atribūtus, un izseko stāvokļa izmaiņām. |
-| 11-007 | Praktikums: klases izstrāde no apraksta. | Patstāvīgi izveido klasi ar konstruktoru un metodēm atbilstoši aprakstam. |
-| 11-008 | Objektu saraksts. Darbs ar daudziem objektiem. | Glabā objektus sarakstā un apstrādā tos ar ciklu. |
-| 11-009 | Objektu saglabāšana datnē un ielasīšana atpakaļ. | Saglabā objektu datus CSV datnē un izveido objektus no datnes satura. |
-| 11-010 | Datu pārbaude klases iekšienē. | Pārbauda vērtību derīgumu konstruktorā un metodēs, neļaujot izveidot nederīgu objektu. |
-| 11-011 | Metode `__str__` un objekta attēlošana tekstā. | Definē `__str__`, lai objektu varētu izvadīt saprotamā formā. |
-| 11-012 | Iekapsulēšana. Kas ir publisks un kas — klases iekšējā lieta. | Skaidro, kāpēc daļa atribūtu nav paredzēta tiešai maiņai no ārpuses, un lieto metodes to vietā. |
-| 11-013 | Mantošana. Kopīgu īpašību izcelšana virsklasē. | Izveido apakšklasi, kas manto virsklases atribūtus un metodes, un papildina tās. |
-| 11-014 | Klašu modelēšana. Vienkārša klašu diagramma. | Attēlo klases, to atribūtus, metodes un saistības diagrammā. |
-| 11-015 | Objektorientētā programmēšana: atkārtojums. Kods ar roku. | Atkārto bloka jēdzienus un vingrinās rakstīt klases kodu ar roku. |
-| 11-016 | Pārbaudes darbs: klases, objekti, metodes, mantošana. | Demonstrē bloka sasniedzamos rezultātus patstāvīgā darbā. |
+| Nr. | Tēma | Sasniedzamais rezultāts | Pārbaude |
+| --- | --- | --- | --- |
+| 11-001 | Objektorientētās programmēšanas jēdziens. No mainīgajiem un funkcijām uz objektiem. | Skaidro, kāda problēma rodas, glabājot saistītus datus atsevišķos mainīgajos, un kā to risina klase. |  |
+| 11-002 | Klases definēšana. Objekta izveide. Atribūti. | Definē klasi ar atribūtiem un izveido no tās objektus. |  |
+| 11-003 | Konstruktors `__init__`. Objekta izveide ar sākuma vērtībām. | Uzraksta konstruktoru, kas objekta izveides brīdī piešķir atribūtiem vērtības. |  |
+| 11-004 | Metodes. Darbības, kas pieder objektam. | Definē metodi, kas izmanto objekta atribūtus, un izsauc to. |  |
+| 11-005 | Atslēgvārds `self` un tā nozīme. | Skaidro, ko nozīmē `self`, un atšķir objekta atribūtu no lokāla mainīgā. |  |
+| 11-006 | Metodes, kas maina objekta stāvokli. | Uzraksta metodes, kas maina objekta atribūtus, un izseko stāvokļa izmaiņām. |  |
+| 11-007 | Praktikums: klases izstrāde no apraksta. | Patstāvīgi izveido klasi ar konstruktoru un metodēm atbilstoši aprakstam. | **FV1** (dators) |
+| 11-008 | Objektu saraksts. Darbs ar daudziem objektiem. | Glabā objektus sarakstā un apstrādā tos ar ciklu. |  |
+| 11-009 | Objektu saglabāšana datnē un ielasīšana atpakaļ. | Saglabā objektu datus CSV datnē un izveido objektus no datnes satura. |  |
+| 11-010 | Datu pārbaude klases iekšienē. | Pārbauda vērtību derīgumu konstruktorā un metodēs, neļaujot izveidot nederīgu objektu. |  |
+| 11-011 | Metode `__str__` un objekta attēlošana tekstā. | Definē `__str__`, lai objektu varētu izvadīt saprotamā formā. |  |
+| 11-012 | Iekapsulēšana. Kas ir publisks un kas — klases iekšējā lieta. | Skaidro, kāpēc daļa atribūtu nav paredzēta tiešai maiņai no ārpuses, un lieto metodes to vietā. |  |
+| 11-013 | Mantošana. Kopīgu īpašību izcelšana virsklasē. | Izveido apakšklasi, kas manto virsklases atribūtus un metodes, un papildina tās. | **FV2** (papīrs) |
+| 11-014 | Klašu modelēšana. Vienkārša klašu diagramma. | Attēlo klases, to atribūtus, metodes un saistības diagrammā. |  |
+| 11-015 | Objektorientētā programmēšana: atkārtojums. Kods ar roku. | Atkārto bloka jēdzienus un vingrinās rakstīt klases kodu ar roku. |  |
+| 11-016 | Pārbaudes darbs: klases, objekti, metodes, mantošana. | Demonstrē bloka sasniedzamos rezultātus patstāvīgā darbā. | **SV1** |
 
 <!-- TABULA:BEIGAS -->
 
