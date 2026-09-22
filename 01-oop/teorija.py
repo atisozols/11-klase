@@ -62,10 +62,10 @@ class Skolens:
         self.vards = vards
         self.klase = klase
 
-# anna = Skolens("Anna", "11.a")
-# roberts = Skolens("Roberts", "11.b")
-# print(anna.vards, anna.klase)
-# print(roberts.vards, roberts.klase)
+anna = Skolens("Anna", "11.a")
+roberts = Skolens("Roberts", "11.b")
+print(anna.vards, anna.klase)
+print(roberts.vards, roberts.klase)
 
 # self.vards = vards
 # ^^^^^^^^^^   ^^^^^
@@ -96,10 +96,10 @@ class Taisnsturis:
         return self.platums == self.augstums
 
 
-# t = Taisnsturis(6, 4)
-# print(t.laukums())        # 24
-# print(t.perimetrs())      # 20
-# print(t.ir_kvadrats())    # False
+t = Taisnsturis(6, 4)
+print(t.laukums())        # 24
+print(t.perimetrs())      # 20
+print(t.ir_kvadrats())    # False
 
 # Metodes nosaukums ir darbības vārds, tāpat kā funkcijai.
 # Metode, kas kaut ko aprēķina, ATGRIEŽ vērtību, nevis izvada to.
@@ -116,12 +116,12 @@ class Taisnsturis:
 # Tāpēc self ir pirmais parametrs katrā metodē — Python to padod pats.
 
 # Bieža kļūda: trūkst self.
-# class Konts:
-#     def __init__(self, atlikums):
-#         atlikums = atlikums          # <- lokāls mainīgais, pazūd
-#
-#     def parbaudit(self):
-#         return atlikums              # <- NameError
+class Konts:
+    def __init__(self, atlikums):
+        atlikums = atlikums          # <- lokāls mainīgais, pazūd
+
+    def parbaudit(self):
+        return atlikums              # <- NameError
 
 
 # ============================================================

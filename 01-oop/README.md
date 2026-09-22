@@ -12,30 +12,31 @@ dati un darbības ar tiem ir vienuviet.
 
 <!-- TABULA:SAKUMS · pēc izmaiņām: python3 bin/tabula.py 01-oop/README.md && python3 bin/darbafails.py 01-oop -->
 
-| Nr. | Tēma | Sasniedzamais rezultāts | Pārbaude |
-| --- | --- | --- | --- |
-| 11-001 | Objektorientētās programmēšanas jēdziens. No mainīgajiem un funkcijām uz objektiem. | Skaidro, kāda problēma rodas, glabājot saistītus datus atsevišķos mainīgajos, un kā to risina klase. |  |
-| 11-002 | Klases definēšana. Objekta izveide. Atribūti. | Definē klasi ar atribūtiem un izveido no tās objektus. |  |
-| 11-003 | Konstruktors `__init__`. Objekta izveide ar sākuma vērtībām. | Uzraksta konstruktoru, kas objekta izveides brīdī piešķir atribūtiem vērtības. |  |
-| 11-004 | Metodes. Darbības, kas pieder objektam. | Definē metodi, kas izmanto objekta atribūtus, un izsauc to. |  |
-| 11-005 | Atslēgvārds `self` un tā nozīme. | Skaidro, ko nozīmē `self`, un atšķir objekta atribūtu no lokāla mainīgā. |  |
-| 11-006 | Metodes, kas maina objekta stāvokli. | Uzraksta metodes, kas maina objekta atribūtus, un izseko stāvokļa izmaiņām. |  |
-| 11-007 | Praktikums: klases izstrāde no apraksta. | Patstāvīgi izveido klasi ar konstruktoru un metodēm atbilstoši aprakstam. | **FV1** (dators) |
-| 11-008 | Objektu saraksts. Darbs ar daudziem objektiem. | Glabā objektus sarakstā un apstrādā tos ar ciklu. |  |
-| 11-009 | Objektu saglabāšana datnē un ielasīšana atpakaļ. | Saglabā objektu datus CSV datnē un izveido objektus no datnes satura. |  |
-| 11-010 | Datu pārbaude klases iekšienē. | Pārbauda vērtību derīgumu konstruktorā un metodēs, neļaujot izveidot nederīgu objektu. |  |
-| 11-011 | Metode `__str__` un objekta attēlošana tekstā. | Definē `__str__`, lai objektu varētu izvadīt saprotamā formā. |  |
-| 11-012 | Iekapsulēšana. Kas ir publisks un kas — klases iekšējā lieta. | Skaidro, kāpēc daļa atribūtu nav paredzēta tiešai maiņai no ārpuses, un lieto metodes to vietā. |  |
-| 11-013 | Mantošana. Kopīgu īpašību izcelšana virsklasē. | Izveido apakšklasi, kas manto virsklases atribūtus un metodes, un papildina tās. | **FV2** (papīrs) |
-| 11-014 | Klašu modelēšana. Vienkārša klašu diagramma. | Attēlo klases, to atribūtus, metodes un saistības diagrammā. |  |
-| 11-015 | Objektorientētā programmēšana: atkārtojums. Kods ar roku. | Atkārto bloka jēdzienus un vingrinās rakstīt klases kodu ar roku. |  |
-| 11-016 | Pārbaudes darbs: klases, objekti, metodes, mantošana. | Demonstrē bloka sasniedzamos rezultātus patstāvīgā darbā. | **SV1** |
+| Nr.    | Tēma                                                                                      | Sasniedzamais rezultāts                                                                                     | Pārbaude               |
+| ------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ----------------------- |
+| 11-001 | Objektorientētās programmēšanas jēdziens. No mainīgajiem un funkcijām uz objektiem. | Skaidro, kāda problēma rodas, glabājot saistītus datus atsevišķos mainīgajos, un kā to risina klase. |                         |
+| 11-002 | Klases definēšana. Objekta izveide. Atribūti.                                           | Definē klasi ar atribūtiem un izveido no tās objektus.                                                    |                         |
+| 11-003 | Konstruktors`__init__`. Objekta izveide ar sākuma vērtībām.                          | Uzraksta konstruktoru, kas objekta izveides brīdī piešķir atribūtiem vērtības.                        |                         |
+| 11-004 | Metodes. Darbības, kas pieder objektam.                                                   | Definē metodi, kas izmanto objekta atribūtus, un izsauc to.                                                |                         |
+| 11-005 | Atslēgvārds`self` un tā nozīme.                                                      | Skaidro, ko nozīmē`self`, un atšķir objekta atribūtu no lokāla mainīgā.                            |                         |
+| 11-006 | Metodes, kas maina objekta stāvokli.                                                      | Uzraksta metodes, kas maina objekta atribūtus, un izseko stāvokļa izmaiņām.                             |                         |
+| 11-007 | Praktikums: klases izstrāde no apraksta.                                                  | Patstāvīgi izveido klasi ar konstruktoru un metodēm atbilstoši aprakstam.                                | **FV1** (dators)  |
+| 11-008 | Objektu saraksts. Darbs ar daudziem objektiem.                                             | Glabā objektus sarakstā un apstrādā tos ar ciklu.                                                        |                         |
+| 11-009 | Objektu saglabāšana datnē un ielasīšana atpakaļ.                                     | Saglabā objektu datus CSV datnē un izveido objektus no datnes satura.                                      |                         |
+| 11-010 | Datu pārbaude klases iekšienē.                                                          | Pārbauda vērtību derīgumu konstruktorā un metodēs, neļaujot izveidot nederīgu objektu.               |                         |
+| 11-011 | Metode`__str__` un objekta attēlošana tekstā.                                         | Definē`__str__`, lai objektu varētu izvadīt saprotamā formā.                                          |                         |
+| 11-012 | Iekapsulēšana. Kas ir publisks un kas — klases iekšējā lieta.                        | Skaidro, kāpēc daļa atribūtu nav paredzēta tiešai maiņai no ārpuses, un lieto metodes to vietā.     |                         |
+| 11-013 | Mantošana. Kopīgu īpašību izcelšana virsklasē.                                      | Izveido apakšklasi, kas manto virsklases atribūtus un metodes, un papildina tās.                          | **FV2** (papīrs) |
+| 11-014 | Klašu modelēšana. Vienkārša klašu diagramma.                                         | Attēlo klases, to atribūtus, metodes un saistības diagrammā.                                             |                         |
+| 11-015 | Objektorientētā programmēšana: atkārtojums. Kods ar roku.                             | Atkārto bloka jēdzienus un vingrinās rakstīt klases kodu ar roku.                                        |                         |
+| 11-016 | Pārbaudes darbs: klases, objekti, metodes, mantošana.                                    | Demonstrē bloka sasniedzamos rezultātus patstāvīgā darbā.                                              | **SV1**           |
 
 <!-- TABULA:BEIGAS -->
 
 ---
 
 ## 11-001 · Kāpēc vajadzīgas klases
+
 `jaukta` · `teorija.py` §1
 
 **Tēma:** Objektorientētās programmēšanas jēdziens. No mainīgajiem un funkcijām uz objektiem.
@@ -43,12 +44,14 @@ dati un darbības ar tiem ir vienuviet.
 **Standarts:** T.Li.2. · T.O.2.4.15.
 
 **Gaita**
+
 - 10' — uzdevums uz tāfeles: glabā 30 skolēnu vārdu, klasi un trīs atzīmes. Cik sarakstu vajag?
 - 10' — demo §1: tie paši dati kā klase; kas mainījās
 - 15' — uzdevumi burtnīcā: no apraksta uz klasi
 - 5' — kur ap mums ir objekti (čeks, konts, rezervācija, ieraksts)
 
 **Uzdevumi**
+
 1. Burtnīcā: dotajam aprakstam «bibliotēkas grāmata» pieraksti, kādi dati par to jāglabā un
    kādas darbības ar to var veikt.
 2. Burtnīcā: tas pats «skolas ēdnīcas pasūtījumam».
@@ -59,6 +62,7 @@ dati un darbības ar tiem ir vienuviet.
 **Mājasdarbs:** 2. uzdevums
 
 ## 11-002 · Klase un objekts
+
 `prakse` · `teorija.py` §2
 
 **Tēma:** Klases definēšana. Objekta izveide. Atribūti.
@@ -66,6 +70,7 @@ dati un darbības ar tiem ir vienuviet.
 **Standarts:** T.O.2.4.15.
 
 **Gaita**
+
 - 5' — klase ir veidne, objekts ir konkrēts eksemplārs
 - 10' — demo §2: `class`, objekta izveide, piekļuve atribūtiem ar punktu
 - 20' — uzdevumi
@@ -83,6 +88,7 @@ dati un darbības ar tiem ir vienuviet.
 **Mājasdarbs:** 6. uzdevums
 
 ## 11-003 · Konstruktors
+
 `prakse` · `teorija.py` §3
 
 **Tēma:** Konstruktors `__init__`. Objekta izveide ar sākuma vērtībām.
@@ -90,6 +96,7 @@ dati un darbības ar tiem ir vienuviet.
 **Standarts:** T.O.2.4.15.
 
 **Gaita**
+
 - 5' — kāpēc atribūtus nav ērti piešķirt pa vienam pēc izveides
 - 10' — demo §3: `__init__`, parametri, `self.atribūts = parametrs`
 - 20' — uzdevumi
@@ -108,6 +115,7 @@ dati un darbības ar tiem ir vienuviet.
 **Mājasdarbs:** 11. uzdevums
 
 ## 11-004 · Metodes
+
 `prakse` · `teorija.py` §4
 
 **Tēma:** Metodes. Darbības, kas pieder objektam.
@@ -115,6 +123,7 @@ dati un darbības ar tiem ir vienuviet.
 **Standarts:** T.O.2.4.15. · T.O.2.4.13.
 
 **Gaita**
+
 - 5' — funkcija, kurai vienmēr jāpadod tie paši dati → metode
 - 10' — demo §4: metode kā funkcija klases iekšpusē; `self` piekļuve atribūtiem
 - 20' — uzdevumi
@@ -131,6 +140,7 @@ dati un darbības ar tiem ir vienuviet.
 **Mājasdarbs:** 17. uzdevums
 
 ## 11-005 · self
+
 `jaukta` · `teorija.py` §5
 
 **Tēma:** Atslēgvārds `self` un tā nozīme.
@@ -138,6 +148,7 @@ dati un darbības ar tiem ir vienuviet.
 **Standarts:** T.O.2.4.15. · T.Li.2.
 
 **Gaita**
+
 - 10' — viena metode, trīs objekti: kā metode zina, ar kuru strādāt?
 - 10' — demo §5: `self` ir pats objekts; kas notiek bez tā
 - 15' — uzdevumi, pirmie divi burtnīcā
@@ -153,6 +164,7 @@ dati un darbības ar tiem ir vienuviet.
 **Mājasdarbs:** 22. uzdevums
 
 ## 11-006 · Objekta stāvoklis
+
 `prakse` · `teorija.py` §6
 
 **Tēma:** Metodes, kas maina objekta stāvokli.
@@ -160,6 +172,7 @@ dati un darbības ar tiem ir vienuviet.
 **Standarts:** T.O.2.4.15.
 
 **Gaita**
+
 - 5' — objekts atceras savu stāvokli starp izsaukumiem
 - 10' — demo §6: `ieskaitit` / `iznemt`, pārbaude pirms izmaiņas
 - 20' — uzdevumi
@@ -176,6 +189,7 @@ dati un darbības ar tiem ir vienuviet.
 **Mājasdarbs:** 26. uzdevums
 
 ## 11-007 · Praktikums: klases
+
 `prakse` · FV1 (dators)
 
 **Tēma:** Praktikums: klases izstrāde no apraksta.
@@ -183,6 +197,7 @@ dati un darbības ar tiem ir vienuviet.
 **Standarts:** T.O.2.4.15. · T.O.2.4.8.
 
 **Gaita**
+
 - 5' — uzdevumu nolasīšana
 - 20' — patstāvīgs darbs
 - 15' — **FV1** pie datora
@@ -198,6 +213,7 @@ dati un darbības ar tiem ir vienuviet.
 **Mājasdarbs:** pabeigt 29. uzdevumu
 
 ## 11-008 · Objektu kolekcija
+
 `prakse` · `teorija.py` §7
 
 **Tēma:** Objektu saraksts. Darbs ar daudziem objektiem.
@@ -205,6 +221,7 @@ dati un darbības ar tiem ir vienuviet.
 **Standarts:** T.O.2.4.15. · T.O.2.4.14.
 
 **Gaita**
+
 - 5' — viens objekts ir maz; īsts uzdevums sākas ar simtiem
 - 10' — demo §7: saraksts ar objektiem, cikls, filtrēšana, kārtošana pēc atribūta
 - 20' — uzdevumi
@@ -220,6 +237,7 @@ dati un darbības ar tiem ir vienuviet.
 **Mājasdarbs:** 34. uzdevums
 
 ## 11-009 · Objekti un datnes
+
 `prakse` · `teorija.py` §8
 
 **Tēma:** Objektu saglabāšana datnē un ielasīšana atpakaļ.
@@ -227,6 +245,7 @@ dati un darbības ar tiem ir vienuviet.
 **Standarts:** T.O.2.4.14. · T.O.2.4.17.
 
 **Gaita**
+
 - 5' — atkārtojums no 10. klases: CSV rinda → saraksts
 - 10' — demo §8: objekts → rinda, rinda → objekts
 - 20' — uzdevumi
@@ -242,6 +261,7 @@ dati un darbības ar tiem ir vienuviet.
 **Mājasdarbs:** 39. uzdevums
 
 ## 11-010 · Validācija klasē
+
 `prakse` · `teorija.py` §9
 
 **Tēma:** Datu pārbaude klases iekšienē.
@@ -249,6 +269,7 @@ dati un darbības ar tiem ir vienuviet.
 **Standarts:** T.V.2.3.5. · T.O.2.4.15.
 
 **Gaita**
+
 - 5' — vai `Konts("Anna", -500)` drīkst eksistēt?
 - 10' — demo §9: pārbaude konstruktorā; `raise ValueError`
 - 20' — uzdevumi
@@ -264,6 +285,7 @@ dati un darbības ar tiem ir vienuviet.
 **Mājasdarbs:** 43. uzdevums
 
 ## 11-011 · Objekta izvade
+
 `prakse` · `teorija.py` §10
 
 **Tēma:** Metode `__str__` un objekta attēlošana tekstā.
@@ -271,6 +293,7 @@ dati un darbības ar tiem ir vienuviet.
 **Standarts:** T.O.2.4.15. · T.V.2.3.10.
 
 **Gaita**
+
 - 5' — kāpēc `print(objekts)` izvada `<__main__.Gramata object at 0x...>`
 - 10' — demo §10: `__str__`, formatēta izvade
 - 20' — uzdevumi
@@ -285,6 +308,7 @@ dati un darbības ar tiem ir vienuviet.
 **Mājasdarbs:** 47. uzdevums
 
 ## 11-012 · Iekapsulēšana
+
 `jaukta` · `teorija.py` §11
 
 **Tēma:** Iekapsulēšana. Kas ir publisks un kas — klases iekšējā lieta.
@@ -292,6 +316,7 @@ dati un darbības ar tiem ir vienuviet.
 **Standarts:** T.O.2.4.15. · T.Li.2.
 
 **Gaita**
+
 - 10' — `konts.atlikums = 1000000` — kāpēc tas ir problēma
 - 10' — demo §11: `_` prefikss kā vienošanās; metodes piekļuvei
 - 15' — uzdevumi
@@ -307,6 +332,7 @@ dati un darbības ar tiem ir vienuviet.
 **Mājasdarbs:** 51. uzdevums
 
 ## 11-013 · Mantošana
+
 `jaukta` · FV2 (papīrs) · `teorija.py` §12
 
 **Tēma:** Mantošana. Kopīgu īpašību izcelšana virsklasē.
@@ -314,6 +340,7 @@ dati un darbības ar tiem ir vienuviet.
 **Standarts:** T.O.2.4.15.
 
 **Gaita**
+
 - 15' — **FV2** uz papīra, datori vēl aizvērti
 - 10' — demo §12: `class Apaksklase(Virsklase)`, `super().__init__()`
 - 15' — uzdevumi
@@ -327,6 +354,7 @@ dati un darbības ar tiem ir vienuviet.
 **Mājasdarbs:** 55. uzdevums
 
 ## 11-014 · Klašu diagramma
+
 `teorija`
 
 **Tēma:** Klašu modelēšana. Vienkārša klašu diagramma.
@@ -334,6 +362,7 @@ dati un darbības ar tiem ir vienuviet.
 **Standarts:** T.O.2.4.15. · T.O.2.4.3.
 
 **Gaita**
+
 - 10' — kāpēc pirms rakstīšanas vērts uzzīmēt; diagrammas elementi
 - 15' — kopīgi: no dota apraksta uz diagrammu uz tāfeles
 - 10' — pāros: sava iepriekšējā uzdevuma diagramma
@@ -347,6 +376,7 @@ dati un darbības ar tiem ir vienuviet.
 **Mājasdarbs:** 59. uzdevums
 
 ## 11-015 · Atkārtojums pirms pārbaudes darba
+
 `jaukta`
 
 **Tēma:** Objektorientētā programmēšana: atkārtojums. Kods ar roku.
@@ -354,6 +384,7 @@ dati un darbības ar tiem ir vienuviet.
 **Standarts:** viss bloks
 
 **Gaita**
+
 - 10' — kopīgi: `self`, konstruktors, atribūts pret lokālu mainīgo — kur klase kļūdījās
 - 20' — **burtnīcā**, bez datora: trīs uzdevumi
 - 10' — pārbaudām kopā uz tāfeles
@@ -367,6 +398,7 @@ dati un darbības ar tiem ir vienuviet.
 **Mājasdarbs:** gatavoties SV1
 
 ## 11-016 · Pārbaudes darbs
+
 `pārbaudes darbs`
 
 **Tēma:** Pārbaudes darbs: klases, objekti, metodes, mantošana.
@@ -374,6 +406,7 @@ dati un darbības ar tiem ir vienuviet.
 **Standarts:** viss bloks
 
 **Gaita**
+
 - 40' — darbs uz papīra, datori aizvērti; kods jāraksta ar roku
 
 **Materiāli:** SV1 — divi varianti, papīra darbs (skat. `kurss/vertesana.md`)

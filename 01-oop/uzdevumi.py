@@ -41,15 +41,15 @@
 # 5. Izveido klasi Skolens ar atribūtiem vards un klase. Izveido divus objektus un
 #    izvadi to atribūtus.
 
-class Skolens:
-    def __init__(self, vards, klase):
-        self.vards = vards
-        self.klase = klase
+# class Skolens:
+#     def __init__(self, vards, klase):
+#         self.vards = vards
+#         self.klase = klase
 
-kristers = Skolens("Kristers", "10.c")
-janis = Skolens("Jānis", "9.b")
+# kristers = Skolens("Kristers", "10.c")
+# janis = Skolens("Jānis", "9.b")
 
-print(kristers.vards, kristers.klase)
+# print(kristers.vards, kristers.klase)
 
 # 6. Izveido klasi Prece ar atribūtiem nosaukums un cena. Izveido trīs objektus.
 
@@ -123,36 +123,81 @@ konrads = Konts("Konrāds", 123)
 
 print(atis.atlikums, konrads.atlikums)
 
-
-
 # ----------------------------------------------------------
 # 11-004 · Metodes
 # ----------------------------------------------------------
 
 # 15. Klasei Taisnsturis pievieno metodes laukums() un perimetrs().
 
+class Taisnsturis:
+    def __init__(self, platums, augstums):
+        self.platums = platums
+        self.augstums = augstums
 
+    def laukums(self):
+        return self.platums * self.augstums
 
+    def perimetrs(self):
+        return 2 * (self.platums + self.augstums)
+
+    def ir_kvadrats(self):
+        return self.platums == self.augstums
 
 # 16. Klasei Konts pievieno metodi ieskaitit(summa), kas palielina atlikumu.
 
+class Konts:
+    def __init__(self, atlikums):
+        self.atlikums = atlikums   # konkrētā situācijā, kur mums ir konts k, k ieņems self vietu un k.atlikums saņems vērtību     
 
+    def parbaudit(self):
+        return self.atlikums   
+    
+    def ieskaitit(self, summa):
+        self.atlikums += summa
+        return True
 
+k = Konts(120) # Konstruktors.__init__(k, 120)
+print(k.atlikums)
+k.ieskaitit(20)
+print(k.atlikums)
 
 # 17. Klasei Gramata pievieno metodi apraksts(), kas atgriež tekstu
 #    "Blēdis · Anšlavs Eglītis, 1943".
 
+class Gramata:
+    def __init__(self, nosaukums, autors, gads):
+        self.nosaukums = nosaukums
+        self.autors = autors
+        self.gads = gads
 
-
+    def apraksts(self):
+        return f"{self.nosaukums} · {self.autors}, {self.gads}"
+    
+g = Gramata("Blēdis", "Anšlavs Eglītis", "1943")
+print(g.apraksts())
 
 # 18. Klasei Skolens pievieno metodi videja_atzime(), ja atzīmes glabājas sarakstā.
 
+class Skolens:
+    def __init__(self, vards, klase, atzimes=[]):
+        self.vards = vards
+        self.klase = klase
+        self.atzimes = atzimes
+
+    def pievienot_atzimi(self, atzime):
+        self.atzimes.append(atzime)
+
+    def videja_atzime(self):
+        return round(sum(self.atzimes) / len(self.atzimes), 2)
+
+janis = Skolens("Jānis", "11b")
+andris = Skolens("Andris", "12c", [6, 8, 3])
+print(andris.videja_atzime())
+    
 
 
 
 # 19. ★ Klasei Punkts pievieno metodi attalums(cits), kas atgriež attālumu līdz citam punktam.
-
-
 
 
 
@@ -164,9 +209,7 @@ print(atis.atlikums, konrads.atlikums)
 
 
 
-
 # 21. Burtnīcā: pieraksti, ko izvadīs dotā programma ar trim objektiem.
-
 
 
 
@@ -174,12 +217,8 @@ print(atis.atlikums, konrads.atlikums)
 
 
 
-
 # 23. ★ Uzraksti klasi, kurā metode atgriež pati sevi (return self), un izsauc divas metodes
 #    vienā rindā.
-
-
-
 
 
 # ----------------------------------------------------------
