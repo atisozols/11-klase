@@ -64,8 +64,8 @@ class Skolens:
 
 anna = Skolens("Anna", "11.a")
 roberts = Skolens("Roberts", "11.b")
-print(anna.vards, anna.klase)
-print(roberts.vards, roberts.klase)
+# print(anna.vards, anna.klase)
+# print(roberts.vards, roberts.klase)
 
 # self.vards = vards
 # ^^^^^^^^^^   ^^^^^
@@ -96,10 +96,10 @@ class Taisnsturis:
         return self.platums == self.augstums
 
 
-t = Taisnsturis(6, 4)
-print(t.laukums())        # 24
-print(t.perimetrs())      # 20
-print(t.ir_kvadrats())    # False
+# t = Taisnsturis(6, 4)
+# print(t.laukums())        # 24
+# print(t.perimetrs())      # 20
+# print(t.ir_kvadrats())    # False
 
 # Metodes nosaukums ir darbības vārds, tāpat kā funkcijai.
 # Metode, kas kaut ko aprēķina, ATGRIEŽ vērtību, nevis izvada to.
@@ -202,16 +202,25 @@ def no_rindas(rinda):
     return Gramata(lauki[0], lauki[1], int(lauki[2]))
 
 
-# g = Gramata("Bledis", "Anslavs Eglitis", 1943)
+g = Gramata("Bledis", "Anslavs Eglitis", 1943)
 # print(g.uz_rindu())
-# g2 = no_rindas("Straumeni,Edvarts Virza,1933")
-# print(g2.autors)
+g2 = no_rindas("Straumeni,Edvarts Virza,1933")
+# print(g2.autors)                      
+ 
+gramatas = [g, g2]
 
 # Saglabāšana:
-# with open("gramatas.csv", "w", encoding="utf-8") as datne:
-#     for gramata in gramatas:
-#         datne.write(gramata.uz_rindu() + "\n")
+with open("gramatas.csv", "w", encoding="utf-8") as datne:
+    for gramata in gramatas:
+        datne.write(gramata.uz_rindu() + "\n")
 
+# Imports no datnes
+saraksts = []
+with open("gramatas.csv", "r", encoding="utf-8") as datne:
+    for line in datne.readlines(): # ["Bledis,Anslavs Eglitis,1943", "Straumeni,Edvarts Virza,1933"]
+        saraksts.append(no_rindas(line))
+
+print(saraksts)
 
 # ============================================================
 # 9. VALIDĀCIJA KLASĒ                                  [11-010]
@@ -250,8 +259,8 @@ class Prece:
         return f"{self.nosaukums:<15}{self.cena:>8.2f} EUR"
 
 
-# p = Prece("Piens", 1.09)
-# print(p)
+p = Prece("Piens", 1.09)
+print(p)
 
 # Tabula no objektiem:
 # for prece in preces:
@@ -283,9 +292,11 @@ class SlegtsKonts:
         return True
 
 
-# k = SlegtsKonts("Anna", 50)
-# print(k.atlikums())
-# k.ieskaitit(-10)          # neizdodas, atlikums nemainās
+k = SlegtsKonts("Anna", 50)
+print(k.atlikums())
+k._atlikums = 100
+print(k._atlikums)
+k.ieskaitit(-10)          # neizdodas, atlikums nemainās
 
 
 # ============================================================

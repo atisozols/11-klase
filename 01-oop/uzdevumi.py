@@ -53,18 +53,18 @@
 
 # 6. Izveido klasi Prece ar atribūtiem nosaukums un cena. Izveido trīs objektus.
 
-class Prece:
-    def __init__(self, nosaukums, cena):
-        self.nosaukums = nosaukums
-        self.cena = cena
+# class Prece:
+#     def __init__(self, nosaukums, cena):
+#         self.nosaukums = nosaukums
+#         self.cena = cena
 
-p1 = Prece("Twix", 0.79)
-p2 = Prece("Snickers", 0.89)
-p3 = Prece("Mars", 0.67)
+# p1 = Prece("Twix", 0.79)
+# p2 = Prece("Snickers", 0.89)
+# p3 = Prece("Mars", 0.67)
 
 # 7. Nomaini viena objekta atribūta vērtību un pārbaudi, ka otrs objekts nemainījās.
 
-p1.nosaukums = "Bounty"
+# p1.nosaukums = "Bounty"
 # print(p1.nosaukums)
 
 # 8. Izveido klasi Punkts ar atribūtiem x un y un izvadi divu punktu koordinātas.
@@ -76,8 +76,8 @@ p1.nosaukums = "Bounty"
 #    (==). Paskaidro rezultātu.
 
 
-p4 = Prece("Mars", 0.67)
-p5 = Prece("Mars", 0.67)
+# p4 = Prece("Mars", 0.67)
+# p5 = Prece("Mars", 0.67)
 
 
 # ----------------------------------------------------------
@@ -145,21 +145,21 @@ class Taisnsturis:
 
 # 16. Klasei Konts pievieno metodi ieskaitit(summa), kas palielina atlikumu.
 
-class Konts:
-    def __init__(self, atlikums):
-        self.atlikums = atlikums   # konkrētā situācijā, kur mums ir konts k, k ieņems self vietu un k.atlikums saņems vērtību     
+# class Konts:
+#     def __init__(self, atlikums):
+#         self.atlikums = atlikums   # konkrētā situācijā, kur mums ir konts k, k ieņems self vietu un k.atlikums saņems vērtību     
 
-    def parbaudit(self):
-        return self.atlikums   
+#     def parbaudit(self):
+#         return self.atlikums   
     
-    def ieskaitit(self, summa):
-        self.atlikums += summa
-        return True
+#     def ieskaitit(self, summa):
+#         self.atlikums += summa
+#         return True
 
-k = Konts(120) # Konstruktors.__init__(k, 120)
-print(k.atlikums)
-k.ieskaitit(20)
-print(k.atlikums)
+# k = Konts(120) # Konstruktors.__init__(k, 120)
+# print(k.atlikums)
+# k.ieskaitit(20)
+# print(k.atlikums)
 
 # 17. Klasei Gramata pievieno metodi apraksts(), kas atgriež tekstu
 #    "Blēdis · Anšlavs Eglītis, 1943".
@@ -190,9 +190,7 @@ class Skolens:
     def videja_atzime(self):
         return round(sum(self.atzimes) / len(self.atzimes), 2)
 
-janis = Skolens("Jānis", "11b")
-andris = Skolens("Andris", "12c", [6, 8, 3])
-print(andris.videja_atzime())
+
     
 
 
@@ -228,29 +226,134 @@ print(andris.videja_atzime())
 # 24. Klasei Konts pievieno metodi iznemt(summa), kas neļauj atlikumam kļūt negatīvam un
 #    atgriež True vai False.
 
+# class Konts:
+#     def __init__(self, atlikums):
+#         self.atlikums = atlikums   # konkrētā situācijā, kur mums ir konts k, k ieņems self vietu un k.atlikums saņems vērtību     
 
+#     def parbaudit(self):
+#         return self.atlikums   
+    
+#     def ieskaitit(self, summa):
+#         self.atlikums += summa
+#         return True
 
+#     def iznemt(self, summa):
+#         if self.atlikums >= summa:
+#             self.atlikums -= summa
+#             return True
+#         else:
+#             return False
 
 # 25. Izveido klasi Skaititajs ar metodēm palielinat(), atiestatit() un vertiba().
 
+class Skaititajs:
+    def __init__(self, solis=1):
+        self.v = 0
+        self.solis = solis
 
+    def palielinat(self):
+        self.v += self.solis
+        return True
 
+    def atiestatit(self):
+        self.v = 0
+        return True
+
+    def vertiba(self):
+        return self.v
+
+s = Skaititajs()
+
+for _ in range(10):
+    s.palielinat()
+
+print(s.vertiba())
 
 # 26. Izveido klasi Grozs, kurā var pievienot preces un izvadīt kopsummu.
 
 
+class Prece:
+    def __init__(self, nosaukums, cena):
+        self.nosaukums = nosaukums
+        self.cena = cena
 
+class Grozs:
+    def __init__(self):
+        self.saraksts = []
+
+    def pievienot(self, prece):
+        self.saraksts.append(prece)
+        return True
+
+    def kopsumma(self):
+        summa = 0
+        for prece in self.saraksts:
+            summa += prece.cena
+        return summa
+
+grozs = Grozs()
+grozs.pievienot(Prece("Txix", 1.79))
+grozs.pievienot(Prece("Maize", 1.25))
+print(grozs.kopsumma())
 
 # 27. Izveido klasi Termometrs, kas atceras visas izmērītās temperatūras un atgriež vidējo.
 
+class Termometrs:
+    def __init__(self):
+        self.saraksts = []
+    
+    def temperatura(self, vertiba):
+        self.saraksts.append(vertiba)
+        return True
 
+    def videja(self):
+        return sum(self.saraksts) / len(self.saraksts)
 
+t = Termometrs()
+t.temperatura(30)
+t.temperatura(27)
+t.temperatura(32)
+t.temperatura(29)
+t.temperatura(30)
+print(t.videja())
 
 # 28. ★ Klasei Konts pievieno darījumu vēsturi un metodi, kas izvada pēdējos piecus darījumus.
 
+class Konts:
+    def __init__(self, atlikums):
+        self.atlikums = atlikums   # konkrētā situācijā, kur mums ir konts k, k ieņems self vietu un k.atlikums saņems vērtību     
+        self.darijumi = []
 
+    def parbaudit(self):
+        self.darijumi.append(f"tika pieprasīts atlikums: {self.atlikums}")
+        return self.atlikums   
+    
+    def ieskaitit(self, summa):
+        self.atlikums += summa
+        self.darijumi.append(f"tika ieskaitīts kontā {summa}; atlikums: {self.atlikums}")
+        return True
 
+    def iznemt(self, summa):
+        if self.atlikums >= summa:
+            self.atlikums -= summa
+            self.darijumi.append(f"tika izņemts {summa}; atlikums: {self.atlikums}")
+            return True
+        else:
+            self.darijumi.append(f"izņemt {summa} neizdevās; atlikums: {self.atlikums}")
+            return False
 
+    def darijumu_vesture(self):
+        return self.darijumi[-5:]
+
+k = Konts(100)
+k.ieskaitit(20)
+k.parbaudit()
+k.iznemt(50)
+k.parbaudit()
+k.iznemt(100)
+
+for darijums in k.darijumu_vesture():
+    print(darijums)
 
 # ----------------------------------------------------------
 # 11-007 · Praktikums: klases
@@ -259,11 +362,60 @@ print(andris.videja_atzime())
 # 29. Kases čeks. Klase Ceks ar metodēm pievienot(prece, cena), summa(),
 #    izdrukat(). Čeka izdruka ir izlīdzināta kolonnās.
 
+# class Ceks:
+#     def __init__(self):
+#         self.preces = {}
 
+#     def pievienot(self, prece, cena):
+#         self.preces[prece] = cena
+
+#     def summa(self):
+#         s = 0
+#         for prece, cena in self.preces.items():
+#             s += cena
+#         return s
+
+#     def izdrukat(self):
+#         print("-" * 10 + " ČEKS " + "-" * 10)
+        
+#         for prece, cena in self.preces.items():
+#             print(f"{prece:<21} {cena}")
+
+#         print("-" * 26)
+
+#         print(f"{'kopā: ':<21} {self.summa():.2f}")
+
+# c = Ceks()
+# c.pievienot("maize", 1.29)
+# c.pievienot("vafeltorte", 7.49)
+# print(round(c.summa(), 2))
+# c.izdrukat()
 
 
 # 30. Rezervācija. Klase Rezervacija ar atribūtiem un metodi atcelt(), kas maina
 #    statusu un neļauj atcelt divreiz.
+
+class Rezervacija:
+    def __init__(self, vards):
+        self.vards = vards
+        self.ir_aktiva = True
+
+    def atcelt(self):
+        if self.ir_aktiva:
+            self.ir_aktiva = False
+
+        else:
+            raise Exception("Nav iespējams atcelt jau atceltu rezervāciju")
+
+    def statuss(self):
+        return f"Vārds: {self.vards}; Aktīva: {"Jā" if self.ir_aktiva else "Nē"}"
+
+
+# r = Rezervacija("Atis")
+# print(r.statuss())
+# r.atcelt()
+# print(r.statuss())
+# r.atcelt()
 
 
 
@@ -272,8 +424,28 @@ print(andris.videja_atzime())
 #    kas pareizi pāriet pār stundu un diennakts robežu.
 
 
+# 23:45 + 00:25 -> 00:10
+# 12:23 + 00:34 -> 12:57
+# 12:30 + 00:45 -> 13:15
+# 12:15 + 00:123 -> 14:18
 
+class Pulkstenis:
+    def __init__(self, stundas, minutes):
+        self.stundas = stundas
+        self.minutes = minutes
 
+    def teksts(self):
+        print(f"{self.stundas}:{self.minutes}")
+
+    def pieskaitit_minutes(self, n):
+        result_m = self.minutes + n
+        result_h = self.stundas + (result_m // 60)
+
+        self.stundas, self.minutes = result_h % 24, result_m % 60
+
+p = Pulkstenis(13, 46)
+p.pieskaitit_minutes(4444)
+p.teksts()
 
 # ----------------------------------------------------------
 # 11-008 · Objektu kolekcija
@@ -281,13 +453,28 @@ print(andris.videja_atzime())
 
 # 32. Izveido piecu Skolens objektu sarakstu un izvadi visu vārdus.
 
+# sk_saraksts = [
+#     Skolens("Jānis", "11b", [10, 9, 8]),
+#     Skolens("Andris", "12c", [6, 8, 3]),
+#     Skolens("Aleksejs", "12c", [8, 9, 6]),
+#     Skolens("Miķelis", "11a", [9, 9, 10])
+#     ]
 
-
+# for skolens in sk_saraksts:
+#     print(skolens.klase, skolens.vards)
 
 # 33. Atrodi sarakstā skolēnu ar augstāko vidējo atzīmi.
 
+# krutakais_dzeks = None
+# for skolens in sk_saraksts:
+#     if not krutakais_dzeks:
+#         krutakais_dzeks = skolens
 
+#     else:
+#         if skolens.videja_atzime() > krutakais_dzeks.videja_atzime():
+#             krutakais_dzeks = skolens
 
+# print(krutakais_dzeks.vards)
 
 # 34. Izvadi tikai tos skolēnus, kuru vidējā atzīme ir virs klases vidējās.
 
@@ -309,7 +496,7 @@ print(andris.videja_atzime())
 # 11-009 · Objekti un datnes
 # ----------------------------------------------------------
 
-# 37. Klasei Gramata pievieno metodi uz_rindu(), kas atgriež CSV rindu.
+# 37. Klasei Gramata pievieno metodi uz_rindu(), kas atgriež CSV rindu. -> <Atribūts1>,<Atribūts2>,...,<AtribūtsN>
 
 
 
@@ -339,6 +526,7 @@ print(andris.videja_atzime())
 # 11-010 · Validācija klasē
 # ----------------------------------------------------------
 
+
 # 42. Klasē Konts neļauj izveidot objektu ar negatīvu atlikumu.
 
 
@@ -356,8 +544,20 @@ print(andris.videja_atzime())
 
 # 45. Uzraksti programmu, kas noķer kļūdu ar try / except un turpina darbu.
 
+# class Konts:
+#     def __init__(self, ipasnieks, atlikums=0):
+#         try:
+#             self.ipasnieks = ipasnieks
+#             self.atlikums = float(atlikums)
+#         except:
+#             print("Radās kļūda, using default values")
+#             self.atlikums = 0
 
+#     def __str__(self):
+#         return f"{round(self.atlikums, 2)}"
 
+# k = Konts(input("vārds: "), input("sākuma atlikums: "))
+# print(k.ipasnieks, k.atlikums)
 
 # 46. ★ Pievieno klasei metodi ir_deriga(), kas atgriež visu problēmu sarakstu, nevis met kļūdu.
 
@@ -377,16 +577,21 @@ print(andris.videja_atzime())
 # 48. Klasei Konts pievieno _str_ ar summu divos ciparos aiz komata.
 
 
+# konti = [
+#     Konts("Atis", 123.45),
+#     Konts("Mārtiņš", 143.5),
+#     Konts("Pēteris", 50.67)
+#     ]
+
 
 
 # 49. Izvadi objektu sarakstu ciklā tā, lai iznāk izlīdzināta tabula.
 
-
-
+# print("-- Īpašnieks -- | -- Atlikums --")
+# for konts in konti:
+#     print(f"{konts.ipasnieks:<15} | {str(konts):<9}")
 
 # 50. ★ Pievieno klasei metodi kopsavilkums(), kas atgriež vairākrindu tekstu ar rāmīti.
-
-
 
 
 
@@ -396,8 +601,40 @@ print(andris.videja_atzime())
 
 # 51. Pārraksti klasi Konts tā, lai atlikumu var mainīt tikai ar metodēm.
 
+class Konts:
+    def __init__(self, ipasnieks, atlikums=0):
+        try:
+            self.ipasnieks = ipasnieks
+            self.atlikums = float(atlikums)
+        except:
+            print("Radās kļūda, using default values")
+            self.atlikums = 0
 
+    def iznemt(self, summa):
+        if summa <= self.atlikums:
+            self.atlikums -= summa
+        else:
+            raise Exception("Nevar izņemt, nepietiek līdzekļu")
 
+    def papildinat(self, summa):
+        self.atlikums += float(summa)
+
+    def __str__(self):
+        return f"{round(self.atlikums, 2)}"
+
+k = Konts("Atis", 123.45)
+
+# print(k)
+# k.iznemt(200)
+# print(k)
+
+class KreditKonts(Konts):
+    def iznemt(self, summa):
+        self.atlikums -= summa
+
+kk = KreditKonts("Atis", 143.00)
+kk.iznemt(200)
+print(kk)
 
 # 52. Burtnīcā: pieraksti, kuri no dotās klases atribūtiem drīkstētu būt publiski un kuri ne.
 
@@ -427,8 +664,29 @@ print(andris.videja_atzime())
 
 # 56. Izveido klasi Transportlidzeklis un divas apakšklases ar atšķirīgu metodi.
 
+# Uzrakstīt klasi Transportlidzeklis un 3 klases, kas to manto. Katrai izveidot savu __str__ metodi.
 
+class Transportlidzeklis:
+    def __init__(self, marka, krasa, ritenu_skaits, ietilpiba=1):
+        self.marka = marka
+        self.krasa = krasa
+        self.ritenu_skaits = ritenu_skaits
+        self.ietilpiba = ietilpiba
 
+    def __str__(self):
+        return f"{self.marka}, {self.krasa}, {self.ritenu_skaits}, {self.ietilpiba}"
+        
+class Automasina(Transportlidzeklis):
+    def __init__(self, marka, krasa, ritenu_skaits, degvielas_tips, paterins, ietilpiba=1):
+        super().__init__(marka, krasa, ritenu_skaits, ietilpiba)
+        self.degvielas_tips = degvielas_tips
+        self.paterins = paterins
+
+    def __str__(self):
+        return f"{self.marka}, {self.krasa}, {self.ritenu_skaits}, {self.ietilpiba}, {self.degvielas_tips}, {self.paterins}"
+
+bmw = Automasina("BMW", "melna", 4, "diesel", 8, 5)
+ricuks = Transportlidzeklis("Cube", "melna", 2)
 
 # 57. Pārraksti divas savas iepriekšējās klases tā, lai kopīgais būtu virsklasē.
 
